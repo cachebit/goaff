@@ -35,9 +35,6 @@ class TopicCreator
         // @ user
         $data['body'] = $this->mentionParser->parse($data['body']);
 
-        if ($data['category_id'] == config('phphub.hunt_category_id')) {
-            $data['body'] = '分享链接：' . $data['link'] . "\n" . $data['body'];
-        }
         $markdown = new Markdown;
         $data['body_original'] = $data['body'];
         $data['body'] = $markdown->convertMarkdownToHtml($data['body']);
@@ -71,12 +68,6 @@ class TopicCreator
             Auth::user()->increment('article_count', 1);
             $blog->increment('article_count', 1);
             app(BlogHasNewArticle::class)->generate(Auth::user(), $topic, $topic->blogs()->first());
-        } elseif ($topic->isShareLink()) {
-            ShareLink::create([
-                'topic_id' => $topic->id,
-                'link' => $data['link'],
-                'site' => domain_from_url($data['link']),
-            ]);
         } else {
             Auth::user()->increment('topic_count', 1);
         }

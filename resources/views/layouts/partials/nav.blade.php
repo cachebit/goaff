@@ -82,8 +82,8 @@
             </ul>
           </li>
 
-          <li class="{{ (Request::is('categories/'.config('phphub.frontline_category_id')) || (isset($topic) && $topic->category_id == config('phphub.frontline_category_id'))) ? ' active' : '' }}">
-              <a href="{{ route('categories.show', config('phphub.frontline_category_id')) }}">付费培训</a>
+          <li class="{{ (Request::is('categories/'.config('phphub.tutorial_category_id')) || (isset($topic) && $topic->category_id == config('phphub.tutorial_category_id'))) ? ' active' : '' }}">
+              <a href="{{ route('categories.show', config('phphub.tutorial_category_id')) }}">付费培训</a>
           </li>
 
           <li role="presentation" class="dropdown">
@@ -92,10 +92,10 @@
             </a>
             <ul class="dropdown-menu">
                 <li class="{{ (Request::is('categories/'.config('phphub.traffic_category_id')) || (isset($topic) && $topic->category_id == config('phphub.traffic_category_id'))) ? ' active' : '' }}">
-                    <a href="{{ route('categories.show', config('phphub.traffic_category_id')) }}">联盟介绍和使用</a>
+                    <a href="{{ route('categories.show', config('phphub.traffic_category_id')) }}">流量介绍和使用</a>
                 </li>
                 <li class="{{ (Request::is('categories/'.config('phphub.network_category_id')) || (isset($topic) && $topic->category_id == config('phphub.network_category_id'))) ? ' active' : '' }}">
-                    <a href="{{ route('categories.show', config('phphub.network_category_id')) }}">流量介绍和使用</a>
+                    <a href="{{ route('categories.show', config('phphub.network_category_id')) }}">联盟介绍和使用</a>
                 </li>
                 <li class="{{ (Request::is('categories/'.config('phphub.tracker_category_id')) || (isset($topic) && $topic->category_id == config('phphub.tracker_category_id'))) ? ' active' : '' }}">
                     <a href="{{ route('categories.show', config('phphub.tracker_category_id')) }}">追踪介绍和使用</a>
@@ -141,11 +141,6 @@
                         <li>
                             <a class="button no-pjax" href="{{ isset($category) ? URL::route('topics.create', ['category_id' => $category->id]) : URL::route('topics.create') }}">
                                 <i class="fa fa-comment text-md"></i> 发起讨论
-                            </a>
-                        </li>
-                        <li>
-                            <a class="button no-pjax" href="{{ route('share_links.create') }}">
-                                <i class="fa fa-link text-md"></i> 分享链接
                             </a>
                         </li>
                     </ul>

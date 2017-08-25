@@ -15,6 +15,19 @@ class CategoriesTableSeeder extends Seeder
         \DB::table('categories')->delete();
 
         \DB::table('categories')->insert(array(
+            1 =>
+            array(
+                'id'          => 6,
+                'parent_id'   => 0,
+                'post_count'  => 0,
+                'weight'      => 6,
+                'name'        => '公告',
+                'slug'        => 'announcement',
+                'description' => '网站公告。',
+                'created_at'  => '2016-07-03 10:00:00',
+                'updated_at'  => '2016-07-03 10:00:00',
+                'deleted_at'  => null,
+            ),
             2 =>
             array(
                 'id'          => 7,

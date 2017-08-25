@@ -27,7 +27,7 @@ class ShareLinksController extends Controller
     {
         $topic = Topic::findOrFail($id);
         $this->authorize('update', $topic);
-        $categories = Category::where('id', '!=', config('phphub.blog_category_id'))->get();
+        $categories = Category::where('id', '!=', config('phphub.winning_category_id'))->get();
         $category = $topic->category;
 
         $topic->body = $topic->body_original;

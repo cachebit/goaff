@@ -1,13 +1,14 @@
 <div class="col-md-3 side-bar">
 
-    @if (Auth::check() && Auth::user()->draft_count > 0)
-        <div class="text-center alert alert-warning">
-            <a href="{{ route('users.drafts') }}" style="color:inherit;"><i class="fa fa-file-text-o"></i> 草稿 {{ Auth::user()->draft_count }} 篇</a>
-        </div>
-    @endif
+  <!-- 草稿 -->
+  @if (Auth::check() && Auth::user()->draft_count > 0)
+      <div class="text-center alert alert-warning">
+          <a href="{{ route('users.drafts') }}" style="color:inherit;"><i class="fa fa-file-text-o"></i> 草稿 {{ Auth::user()->draft_count }} 篇</a>
+      </div>
+  @endif
 
-
-    @if (isset($topic))
+  <!-- 作者 -->
+  @if (isset($topic))
   <div class="panel panel-default corner-radius">
 
       <div class="panel-heading text-center">
@@ -37,6 +38,7 @@
   @endif
 
 
+  <!-- 作者其它话题 -->
   @if (isset($userTopics) && count($userTopics))
   <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
@@ -49,6 +51,7 @@
   @endif
 
 
+  <!-- 分类下其它话题 -->
   @if (isset($categoryTopics) && count($categoryTopics))
   <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
@@ -60,43 +63,46 @@
   </div>
   @endif
 
-<div class="panel panel-default corner-radius" style="
-    text-align: center;
-    background-color: transparent;
-    border: none;
-">
-<a href="https://laravel-china.org/topics/3383" rel="nofollow" title="" style="">
-      <img src="https://dn-phphub.qbox.me/uploads/images/201612/09/1/qASrRyKNj0.jpg" style="width: 100%;border-radius: 0px;box-shadow: none;border: 1px solid #ffafaf;"></a>
-</div>
+  <!-- 第一个大图 -->
+  <!-- <div class="panel panel-default corner-radius" style="
+      text-align: center;
+      background-color: transparent;
+      border: none;
+  ">
+      <a href="http://www.affren.com/a-complete-guide-to-affiliate-marketing-finch-1-introduction" rel="nofollow" title="" style="">
+        <img src="/assets/images/sidebar-ad.png" style="width: 100%;border-radius: 0px;box-shadow: none;border: 1px solid #ffafaf;">
+      </a>
+  </div> -->
 
-@if (Route::currentRouteName() == 'topics.index')
-    @include('layouts.partials._resources_panel')
-@endif
+  @if (Route::currentRouteName() == 'topics.index')
+      @include('layouts.partials._resources_panel')
+  @endif
 
-@if (isset($active_users) && count($active_users))
-    <div class="panel panel-default corner-radius panel-active-users">
-      <div class="panel-heading text-center">
-        <h3 class="panel-title">{{ lang('Active Users') }}（<a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a>）</h3>
+  <!-- @if (isset($active_users) && count($active_users))
+      <div class="panel panel-default corner-radius panel-active-users">
+        <div class="panel-heading text-center">
+          <h3 class="panel-title">{{ lang('Active Users') }}（<a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a>）</h3>
+        </div>
+        <div class="panel-body">
+          @include('topics.partials.active_users')
+        </div>
       </div>
-      <div class="panel-body">
-        @include('topics.partials.active_users')
-      </div>
+  @endif -->
+
+  @if (isset($hot_topics) && count($hot_topics))
+  <div class="panel panel-default corner-radius panel-hot-topics">
+    <div class="panel-heading text-center">
+      <h3 class="panel-title">七天内最热</h3>
     </div>
-@endif
-
-@if (isset($hot_topics) && count($hot_topics))
-<div class="panel panel-default corner-radius panel-hot-topics">
-  <div class="panel-heading text-center">
-    <h3 class="panel-title">七天内最热</h3>
+    <div class="panel-body">
+      @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $hot_topics, 'numbered' => true])
+    </div>
   </div>
-  <div class="panel-body">
-    @include('layouts.partials.sidebar_topics', ['sidebarTopics' => $hot_topics, 'numbered' => true])
-  </div>
-</div>
-@endif
+  @endif
 
 
-  <div class="panel panel-default corner-radius">
+  <!-- 赞助 -->
+  <!-- <div class="panel panel-default corner-radius">
     <div class="panel-body text-center sidebar-sponsor-box">
         @if(isset($banners['sidebar-sponsor']))
             @foreach($banners['sidebar-sponsor'] as $banner)
@@ -107,9 +113,10 @@
             @endforeach
         @endif
   </div>
-  </div>
+  </div> -->
 
-@if (Route::currentRouteName() != 'home')
+<!-- 友情社区 -->
+<!-- @if (Route::currentRouteName() != 'home')
   @if (isset($links) && count($links))
     <div class="panel panel-default corner-radius">
       <div class="panel-heading text-center">
@@ -124,9 +131,10 @@
       </div>
     </div>
   @endif
-@endif
+@endif -->
 
-@if (Route::currentRouteName() == 'topics.index')
+<!-- App下载 -->
+<!-- @if (Route::currentRouteName() == 'topics.index')
 
 <div class="panel panel-default corner-radius">
   <div class="panel-heading text-center">
@@ -139,34 +147,34 @@
   </div>
 </div>
 
-@endif
+@endif -->
 
-<div id="sticker">
+<!-- <div id="sticker">
 
-@include('layouts.partials._resources_panel')
+  @include('layouts.partials._resources_panel')
 
-<div class="panel panel-default corner-radius" style="color:#a5a5a5">
-  <div class="panel-body text-center">
-      <a href="http://estgroupe.com/" style="color:#a5a5a5">
-          <img src="https://dn-phphub.qbox.me/uploads/images/201612/12/1/iq7WQc2iuW.png" style="width: 20px;margin-right: 4px;margin-top: -4px;">
-          <span style="margin-top: 7px;display: inline-block;">
-              优帆远扬 - 创造不息，交付不止
-          </span>
-      </a>
+  <div class="panel panel-default corner-radius" style="color:#a5a5a5">
+    <div class="panel-body text-center">
+        <a href="http://estgroupe.com/" style="color:#a5a5a5">
+            <img src="https://dn-phphub.qbox.me/uploads/images/201612/12/1/iq7WQc2iuW.png" style="width: 20px;margin-right: 4px;margin-top: -4px;">
+            <span style="margin-top: 7px;display: inline-block;">
+                优帆远扬 - 创造不息，交付不止
+            </span>
+        </a>
+    </div>
   </div>
-</div>
 
-<div class="panel panel-default corner-radius" style="color:#a5a5a5">
-  <div class="panel-body text-center">
-      <a href="{{ Auth::check() ? 'https://laravel-china.org/messages/to/1' : 'mailto:summer@yousails.com'}}" style="color:#a5a5a5">
-          <span style="margin-top: 7px;display: inline-block;">
-              <i class="fa fa-heart" aria-hidden="true" style="color: rgba(232, 146, 136, 0.89);"></i> 建议反馈？请私信 Summer
-          </span>
-      </a>
+  <div class="panel panel-default corner-radius" style="color:#a5a5a5">
+    <div class="panel-body text-center">
+        <a href="{{ Auth::check() ? 'https://laravel-china.org/messages/to/1' : 'mailto:summer@yousails.com'}}" style="color:#a5a5a5">
+            <span style="margin-top: 7px;display: inline-block;">
+                <i class="fa fa-heart" aria-hidden="true" style="color: rgba(232, 146, 136, 0.89);"></i> 建议反馈？请私信 Summer
+            </span>
+        </a>
+    </div>
   </div>
-</div>
 
-</div>
+</div> -->
+
 </div>
 <div class="clearfix"></div>
-

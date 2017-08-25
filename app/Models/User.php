@@ -61,10 +61,10 @@ class User extends Model implements AuthenticatableContract,
         parent::boot();
 
         static::created(function ($user) {
-            $driver = $user['github_id'] ? 'github' : 'wechat';
-            SiteStatus::newUser($driver);
-
-            dispatch(new SendActivateMail($user));
+            // $driver = $user['github_id'] ? 'github' : 'wechat';
+            // SiteStatus::newUser($driver);
+            //
+            // dispatch(new SendActivateMail($user));
         });
 
         static::deleted(function ($user) {
@@ -201,5 +201,10 @@ class User extends Model implements AuthenticatableContract,
         $show_data = Cache::get($show_key);
         $show_data[$this->id] = $now;
         Cache::forever($show_key, $show_data);
+    }
+
+    public function AccessAble(\App\Models\Topic $topic)
+    {
+
     }
 }

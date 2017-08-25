@@ -40,10 +40,6 @@ trait TopicFilterable
         // 过滤站务信息
         $query = $query->withoutBoardTopics();
 
-        if ( ! if_route('categories.show')) {
-            $query->withoutShareLink();
-        }
-
         switch ($filter) {
             case 'noreply':
                 return $query->pinned()->orderBy('reply_count', 'asc')->recent();
@@ -96,11 +92,11 @@ trait TopicFilterable
 
     public function scopeOnlyArticle($query)
     {
-        return $query->where('category_id', '=', config('phphub.blog_category_id'));
+        return $query->where('category_id', '=', config('phphub.winning_category_id'));
     }
     public function scopeWithoutArticle($query)
     {
-        return $query->where('category_id', '!=', config('phphub.blog_category_id'));
+        return $query->where('category_id', '!=', config('phphub.winning_category_id'));
     }
 
     public function scopeRecent($query)
@@ -165,18 +161,10 @@ trait TopicFilterable
         return $query;
     }
 
-    public function scopeWithoutShareLink($query)
-    {
-        if (config('phphub.hunt_category_id')) {
-            return $query->where('category_id', '!=', config('phphub.hunt_category_id'));
-        }
-        return $query;
-    }
-
     public function scopeWithoutLIFE($query)
     {
-        if (config('phphub.life_category_id')) {
-            return $query->where('category_id', '!=', config('phphub.life_category_id'));
+        if (config('phphub.stm_category_id')) {
+            return $query->where('category_id', '!=', config('phphub.stm_category_id'));
         }
         return $query;
     }

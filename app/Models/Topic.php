@@ -65,7 +65,7 @@ class Topic extends Model
         parent::boot();
 
         static::created(function ($topic) {
-            SiteStatus::newTopic();
+            // SiteStatus::newTopic();
         });
 
         static::deleted(function ($topic) {
@@ -210,12 +210,7 @@ class Topic extends Model
 
     public function isArticle()
     {
-        return $this->category_id == config('phphub.blog_category_id');
-    }
-
-    public function isShareLink()
-    {
-        return $this->category_id == config('phphub.hunt_category_id');
+        return $this->category_id == config('phphub.winning_category_id');
     }
 
     public function link($params = [])

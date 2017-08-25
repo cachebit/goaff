@@ -31,10 +31,10 @@ class PagesController extends Controller
         return view('pages.about');
     }
 
-    public function composer(Request $request)
-    {
-        return app(TopicsController::class)->show(4484, $request, true);
-    }
+    // public function composer(Request $request)
+    // {
+    //     return app(TopicsController::class)->show(4484, $request, true);
+    // }
 
     public function wildcard($name, Request $request)
     {

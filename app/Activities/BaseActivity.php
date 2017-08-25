@@ -29,8 +29,6 @@ class BaseActivity
 
         if ($topic->isArticle()) {
             $topic_type = 'article';
-        } elseif ($topic->isShareLink()) {
-            $topic_type = 'share_link';
         } else {
             $topic_type = 'topic';
         }

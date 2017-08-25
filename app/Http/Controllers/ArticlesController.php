@@ -63,7 +63,7 @@ class ArticlesController extends Controller implements CreatorListener
         }
         $topic = Topic::find($id);
         $topic->update([
-            'category_id' => config('phphub.blog_category_id')
+            'category_id' => config('phphub.winning_category_id')
         ]);
 
         // attach blog

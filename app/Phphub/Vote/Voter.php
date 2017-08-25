@@ -35,11 +35,6 @@ class Voter
             Notification::notify('topic_upvote', Auth::user(), $topic->user, $topic);
         }
 
-        if ($topic->isShareLink()) {
-            $topic->updated_at = Carbon::now()->toDateTimeString();
-            $topic->save();
-        }
-
         return $topic;
     }
 

@@ -33,7 +33,7 @@ class MigrateBlogTopicRelationship extends Command
 
     public function handle()
     {
-        Topic::where('category_id', config('phphub.blog_category_id'))->chunk(200, function ($topics) {
+        Topic::where('category_id', config('phphub.winning_category_id'))->chunk(200, function ($topics) {
             foreach ($topics as $topic) {
                 $blog = $topic->user->blogs()->first();
 

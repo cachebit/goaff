@@ -19,12 +19,7 @@ class CategoriesController extends Controller
         $links    = Link::allFromCache();
         $banners = Banner::allByPosition();
 
-        if ($category->id == config('phphub.hunt_category_id')) {
-            $topics->load('share_link');
-            $view = 'share_links.index';
-        } else {
-            $view = 'topics.index';
-        }
+        $view = 'topics.index';
 
         return view($view, compact('topics', 'category', 'links', 'banners'));
     }

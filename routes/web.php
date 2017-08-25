@@ -8,7 +8,7 @@ Route::get('/wiki', 'PagesController@wiki')->name('wiki');
 Route::get('/sitemap', 'PagesController@sitemap');
 Route::get('/sitemap.xml', 'PagesController@sitemap');
 Route::get('/hall_of_fames', 'PagesController@hallOfFames')->name('hall_of_fames');
-Route::get('/composer', 'PagesController@composer')->name('composer');
+// Route::get('/composer', 'PagesController@composer')->name('composer');
 
 Route::get('/roles/{id}', 'RolesController@show')->name('roles.show');
 
@@ -149,10 +149,6 @@ Route::get("/articles/{id}/edit", "ArticlesController@edit")->name('articles.edi
 Route::get('/topics/{id}/{slug?}', 'TopicsController@show')->name('topics.show');
 Route::get('/articles/{id}/{slug?}', "TopicsController@show")->name('articles.show');
 
-# ------------------ ShareLinks ------------------------
-
-Route::get('/links/share', 'ShareLinksController@createLink')->name('share_links.create');
-Route::get('/share_links/{id}/edit', 'ShareLinksController@edit')->name('share_links.edit');
 
 # ------------------ Wild Card ------------------------
 

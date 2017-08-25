@@ -11,8 +11,8 @@ class UsersTableSeeder extends Seeder
         $password = bcrypt('secret');
         $users = factory(User::class)->times(49)->make()->each(function ($user, $i) use ($password)  {
             if ($i == 0) {
-                $user->name = 'admin';
-                $user->email = 'admin@estgroupe.com';
+                $user->name = 'affren';
+                $user->email = 'affren2020@gmail.com';
                 $user->github_name = 'admin';
                 $user->verified = 1;
             }

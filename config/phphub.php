@@ -28,6 +28,8 @@ return [
     'tracker_category_id'       => env('TRACKER_CATEGORY_ID')?:19,
     'tools_category_id'       => env('TOOLS_CATEGORY_ID')?:20,
 
+    'qa_category_id'       => env('QA_CATEGORY_ID')?:99,
+
     'wiki_topic_id'          => env('WIKI_TOPIC_ID') ?:1,
     'admin_board_cid'        => env('ADMIN_BOARD_CID') ?:0,
 

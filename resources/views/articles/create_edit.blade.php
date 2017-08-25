@@ -25,7 +25,7 @@
             @endif
                 {!! csrf_field() !!}
 
-                <input name="category_id" type="hidden" value="{{ config('phphub.blog_category_id') }}">
+                <input name="category_id" type="hidden" value="{{ config('phphub.winning_category_id') }}">
 
                 @if (isset($blog))
                     <input name="blog_id" type="hidden" value="{{ $blog->id }}">

@@ -8,7 +8,7 @@
 
 <div class="col-md-9 topics-index main-col hunt-index share-link-index">
 
-    @if (isset($category) && $category->id == config('phphub.life_category_id'))
+    @if (isset($category) && $category->id == config('phphub.stm_category_id'))
         <div class="alert alert-info">
             『生活能为工作带来灵感，工作是为了更好的生活。』话题如旅行、移民、宠物等。发帖请遵守 <a style="text-decoration: underline;" href="https://laravel-china.org/topics/3022/community-posting-and-management">社区发帖和管理规范</a>。
         </div>
