@@ -1,3 +1,16 @@
+<div class="container">
+    <div class="row">
+        <br/>
+        <div class="col-md-6">
+            <img class="img-responsive" src="/assets/images/banner.png" alt="">
+        </div>
+
+        <div class="col-md-6">
+            <img class="img-responsive pull-right" src="/assets/images/ad.png" alt="">
+        </div>
+    </div>
+</div>
+<br/>
 <div role="navigation" class="navbar navbar-default topnav">
   <div class="container">
     <div class="navbar-header">
@@ -9,19 +22,90 @@
           <span class="icon-bar"></span>
         </button>
 
-      <a href="/" class="navbar-brand">
-          <img src="{{ cdn('assets/images/logo.png') }}" alt="Laravel China" />
-      </a>
     </div>
 
     <div id="top-navbar-collapse" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="{{ (Request::is('topics') && ! Request::is('categories*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
-        <li class="{{ (Request::is('categories/'.config('phphub.articles_category_id')) || (isset($topic) && $topic->category_id == config('phphub.articles_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.articles_category_id')) }}">译文</a></li>
-        <li class="{{ (Request::is('categories/'.config('phphub.foreshow_category_id')) || (isset($topic) && $topic->category_id == config('phphub.foreshow_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.foreshow_category_id')) }}">翻译中</a></li>
-        <li class="{{ (Request::is('categories/'.config('phphub.zhongda_category_id')) || (isset($topic) && $topic->category_id == config('phphub.zhongda_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.zhongda_category_id')) }}">众筹问答</a></li>
-        <li class="{{ (Request::is('categories/'.config('phphub.tutorial_category_id')) || (isset($topic) && $topic->category_id == config('phphub.tutorial_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.tutorial_category_id')) }}">付费培训</a></li>
-        <li class="{{ (Request::is('categories/'.config('phphub.frontline_category_id')) || (isset($topic) && $topic->category_id == config('phphub.frontline_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.frontline_category_id')) }}">注册和设置</a></li>
+          <li class="{{ (Request::is('/') ? ' active' : '') }}">
+              <a href="/">首页</a>
+          </li>
+
+          <li class="{{ (Request::is('topics') && ! Request::is('categories*') ? ' active' : '') }}">
+              <a href="{{ route('topics.index') }}">所有</a>
+          </li>
+
+          <li class="{{ (Request::is('categories/'.config('phphub.discussion_category_id')) || (isset($topic) && $topic->category_id == config('phphub.discussion_category_id'))) ? ' active' : '' }}">
+              <a href="{{ route('categories.show', config('phphub.discussion_category_id')) }}">讨论</a>
+          </li>
+
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              最新<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="{{ (Request::is('categories/'.config('phphub.stm_category_id')) || (isset($topic) && $topic->category_id == config('phphub.stm_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.stm_category_id')) }}">STM 论坛</a></li>
+                <li class="{{ (Request::is('categories/'.config('phphub.mad_category_id')) || (isset($topic) && $topic->category_id == config('phphub.mad_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.mad_category_id')) }}">Mad Society</a></li>
+                <li class="{{ (Request::is('categories/'.config('phphub.finch_category_id')) || (isset($topic) && $topic->category_id == config('phphub.finch_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.finch_category_id')) }}">Finch Sells</a></li>
+                <li class="{{ (Request::is('categories/'.config('phphub.charlesngo_category_id')) || (isset($topic) && $topic->category_id == config('phphub.charlesngo_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.charlesngo_category_id')) }}">Charles Ngo</a></li>
+                <li class="{{ (Request::is('categories/'.config('phphub.malan_category_id')) || (isset($topic) && $topic->category_id == config('phphub.malan_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.malan_category_id')) }}">Malan Darrass</a></li>
+                <li class="{{ (Request::is('categories/'.config('phphub.case_category_id')) || (isset($topic) && $topic->category_id == config('phphub.case_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.case_category_id')) }}">案例学习</a></li>
+                <li class="{{ (Request::is('categories/'.config('phphub.follow_category_id')) || (isset($topic) && $topic->category_id == config('phphub.follow_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.follow_category_id')) }}">实战记录</a></li>
+            </ul>
+          </li>
+
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              译文<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="{{ (Request::is('categories/'.config('phphub.stm_category_id')) || (isset($topic) && $topic->category_id == config('phphub.stm_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.stm_category_id')) }}">STM 论坛</a></li>
+                <li class="{{ (Request::is('categories/'.config('phphub.mad_category_id')) || (isset($topic) && $topic->category_id == config('phphub.mad_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.mad_category_id')) }}">Mad Society</a></li>
+                <li class="{{ (Request::is('categories/'.config('phphub.finch_category_id')) || (isset($topic) && $topic->category_id == config('phphub.finch_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.finch_category_id')) }}">Finch Sells</a></li>
+                <li class="{{ (Request::is('categories/'.config('phphub.charlesngo_category_id')) || (isset($topic) && $topic->category_id == config('phphub.charlesngo_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.charlesngo_category_id')) }}">Charles Ngo</a></li>
+                <li class="{{ (Request::is('categories/'.config('phphub.malan_category_id')) || (isset($topic) && $topic->category_id == config('phphub.malan_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.malan_category_id')) }}">Malan Darrass</a></li>
+                <li class="{{ (Request::is('categories/'.config('phphub.case_category_id')) || (isset($topic) && $topic->category_id == config('phphub.case_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.case_category_id')) }}">案例学习</a></li>
+                <li class="{{ (Request::is('categories/'.config('phphub.follow_category_id')) || (isset($topic) && $topic->category_id == config('phphub.follow_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.follow_category_id')) }}">实战记录</a></li>
+            </ul>
+          </li>
+
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              在译<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="{{ (Request::is('categories/'.config('phphub.foreshow_category_id')) || (isset($topic) && $topic->category_id == config('phphub.foreshow_category_id'))) ? ' active' : '' }}">
+                    <a href="{{ route('categories.show', config('phphub.foreshow_category_id')) }}">即将发布</a>
+                </li>
+                <li class="{{ (Request::is('categories/'.config('phphub.recommend_category_id')) || (isset($topic) && $topic->category_id == config('phphub.recommend_category_id'))) ? ' active' : '' }}">
+                    <a href="{{ route('categories.show', config('phphub.recommend_category_id')) }}">推荐翻译</a>
+                </li>
+            </ul>
+          </li>
+
+          <li class="{{ (Request::is('categories/'.config('phphub.frontline_category_id')) || (isset($topic) && $topic->category_id == config('phphub.frontline_category_id'))) ? ' active' : '' }}">
+              <a href="{{ route('categories.show', config('phphub.frontline_category_id')) }}">付费培训</a>
+          </li>
+
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              联盟/流量/追踪<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="{{ (Request::is('categories/'.config('phphub.traffic_category_id')) || (isset($topic) && $topic->category_id == config('phphub.traffic_category_id'))) ? ' active' : '' }}">
+                    <a href="{{ route('categories.show', config('phphub.traffic_category_id')) }}">联盟介绍和使用</a>
+                </li>
+                <li class="{{ (Request::is('categories/'.config('phphub.network_category_id')) || (isset($topic) && $topic->category_id == config('phphub.network_category_id'))) ? ' active' : '' }}">
+                    <a href="{{ route('categories.show', config('phphub.network_category_id')) }}">流量介绍和使用</a>
+                </li>
+                <li class="{{ (Request::is('categories/'.config('phphub.tracker_category_id')) || (isset($topic) && $topic->category_id == config('phphub.tracker_category_id'))) ? ' active' : '' }}">
+                    <a href="{{ route('categories.show', config('phphub.tracker_category_id')) }}">追踪介绍和使用</a>
+                </li>
+                <li class="{{ (Request::is('categories/'.config('phphub.tools_category_id')) || (isset($topic) && $topic->category_id == config('phphub.tools_category_id'))) ? ' active' : '' }}">
+                    <a href="{{ route('categories.show', config('phphub.tools_category_id')) }}">其他工具介绍和使用</a>
+                </li>
+            </ul>
+          </li>
+
       </ul>
 
       <div class="navbar-right">
@@ -125,6 +209,7 @@
               </a>
           @endif
         </ul>
+
       </div>
     </div>
 
