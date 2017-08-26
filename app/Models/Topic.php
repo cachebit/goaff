@@ -65,7 +65,7 @@ class Topic extends Model
         parent::boot();
 
         static::created(function ($topic) {
-            // SiteStatus::newTopic();
+            SiteStatus::newTopic();
         });
 
         static::deleted(function ($topic) {

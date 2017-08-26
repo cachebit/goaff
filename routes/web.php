@@ -1,4 +1,12 @@
 <?php
+# ------------------ Test Route ------------------------
+Route::get('/test', 'PagesController@test')->name('test');
+
+# ------------------ Memberships Route ------------------------
+Route::get('/memberships', 'MembershipsController@index')->name('memberships.index');
+Route::patch('/memberships/{user}/membership', 'MembershipsController@update')->name('memberships.update');
+Route::get('/memberships/{user}/logs', 'MembershipLogsController@index')->name('memberships.logs');
+
 # ------------------ Page Route ------------------------
 Route::get('/', 'PagesController@home')->name('home');
 Route::get('/about', 'PagesController@about')->name('about');

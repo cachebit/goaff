@@ -15,6 +15,15 @@ use Auth;
 
 class PagesController extends Controller
 {
+    public function test()
+    {
+        // $topic = Topic::create([
+        //
+        // ]);
+        //
+        // return view('test');
+    }
+
     public function home(Topic $topic, Request $request)
     {
         if (Auth::check()) {

@@ -49,4 +49,19 @@ class TopicPolicy
     {
         return $user->may('manage_topics') || $topic->user_id == $user->id;
     }
+
+    public function access(User $user, Topic $topic)
+    {
+      //确定用户与权限
+      //确定文章时间和用户会员到期时间
+      //返回正确的权限
+      if($user->may('visit_admin') || $user->may('manage_users') || $user->may('manage_topics')){
+        return true;
+      }elseif($user->may('monthly_accessable')){
+        return false;
+      }elseif($user->may('annually_accessable')){
+        return true;
+      }
+
+    }
 }

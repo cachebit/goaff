@@ -36,20 +36,37 @@ class ESTInitRBAC extends BaseCommand
         $manage_users  = Permission::addPermission('manage_users', '用户管理权限');
         $manage_topics = Permission::addPermission('manage_topics', '文章管理权限');
         $compose_announcement = Permission::addPermission('compose_announcement', '公告发布权限');
+
         $monthly_accessable = Permission::addPermission('monthly_accessable', '过去30天和今后30天');
-        $annually_accessable = Permission::addPermission('annually_accessable', '过去全部和今后1年');
+        $annually_accessable = Permission::addPermission('annually_accessable', '过去annually以下文章和今后1年');
+        $uppergrade_accessable = Permission::addPermission('uppergrade_accessable', '过去uppergrade以下和今后1年');
+        $ultimate_accessable = Permission::addPermission('ultimate_accessable', '所有的访问');
 
         $this->attachPermissions($founder, [
             $visit_admin,
             $manage_users,
             $manage_topics,
             $compose_announcement,
+            $ultimate_accessable,
         ]);
 
         $this->attachPermissions($maintainer, [
             $visit_admin,
             $manage_topics,
             $compose_announcement,
+            $ultimate_accessable,
+        ]);
+
+        $this->attachPermissions($platinum, [
+            $uppergrade_accessable,
+        ]);
+
+        $this->attachPermissions($golden, [
+            $annually_accessable,
+        ]);
+
+        $this->attachPermissions($premium, [
+            $monthly_accessable,
         ]);
 
         if (!$user->hasRole($founder->name)) {
