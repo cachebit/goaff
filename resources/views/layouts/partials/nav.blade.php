@@ -34,8 +34,20 @@
               <a href="{{ route('topics.index') }}">所有</a>
           </li>
 
-          <li class="{{ (Request::is('categories/'.config('phphub.discussion_category_id')) || (isset($topic) && $topic->category_id == config('phphub.discussion_category_id'))) ? ' active' : '' }}">
-              <a href="{{ route('categories.show', config('phphub.discussion_category_id')) }}">讨论</a>
+
+
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              讨论区<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="{{ (Request::is('categories/'.config('phphub.discussion_category_id')) || (isset($topic) && $topic->category_id == config('phphub.discussion_category_id'))) ? ' active' : '' }}">
+                  <a href="{{ route('categories.show', config('phphub.discussion_category_id')) }}">综合讨论</a>
+              </li>
+              <li class="{{ (Request::is('categories/'.config('phphub.winning_category_id')) || (isset($topic) && $topic->category_id == config('phphub.winning_category_id'))) ? ' active' : '' }}">
+                  <a href="{{ route('categories.show', config('phphub.winning_category_id')) }}">成长之路</a>
+              </li>
+            </ul>
           </li>
 
           <li role="presentation" class="dropdown">
