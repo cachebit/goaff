@@ -92,11 +92,11 @@ trait TopicFilterable
 
     public function scopeOnlyArticle($query)
     {
-        return $query->where('category_id', '=', config('phphub.winning_category_id'));
+        return $query->where('category_id', '=', config('phphub.blog_category_id'));
     }
     public function scopeWithoutArticle($query)
     {
-        return $query->where('category_id', '!=', config('phphub.winning_category_id'));
+        return $query->where('category_id', '!=', config('phphub.blog_category_id'));
     }
 
     public function scopeRecent($query)

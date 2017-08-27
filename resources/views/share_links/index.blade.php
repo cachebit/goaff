@@ -10,17 +10,16 @@
 
     @if (isset($category) && $category->id == config('phphub.stm_category_id'))
         <div class="alert alert-info">
-            『生活能为工作带来灵感，工作是为了更好的生活。』话题如旅行、移民、宠物等。发帖请遵守 <a style="text-decoration: underline;" href="https://laravel-china.org/topics/3022/community-posting-and-management">社区发帖和管理规范</a>。
+          STM 论坛精华实时更新！
         </div>
     @endif
-    @if (isset($category) && $category->id == config('phphub.qa_category_id'))
+    @if (isset($category) && $category->id == config('phphub.mad_category_id'))
         <div class="alert alert-info">
-            在 LC，我们不提倡 <a href="{{ route('topics.show', 535) }}" style="text-decoration: underline;">新手提问</a> ，如果你编程遇到难题，请先 <a href="{{ route('topics.show', 3656) }}" style="text-decoration: underline;">搜索</a> 再 <a href="{{ route('topics.create', ['category_id' => config('phphub.qa_category_id')]) }}" class="btn btn-warning">提问</a>
+          Mad Society 论坛精华实时更新！
         </div>
     @endif
     @if (isset($category) && $category->id === 1)
         <div class="alert alert-info">
-            发布招聘贴前请必须仔细阅读 <a href="https://laravel-china.org/topics/817/laravel-china-recruitment-post-specification" style="text-decoration: underline;">Laravel China 招聘贴发布规范</a>，不按规范发帖会被管理员 <a href="https://laravel-china.org/topics/2802/description-of-shen" style="text-decoration: underline;">永久下沉</a>。<a href="{{ route('topics.create', ['category_id' => 1]) }}" class="btn btn-warning">发布招聘</a>
         </div>
     @endif
     <div class="panel panel-default">

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <title>
         @section('title')
-PHPHub  - PHP & Laravel 中文社区
+Affren  - 实时更新国外 Affiliate Marketing 和 Media Buy 教程。
         @show
     </title>
     <link rel="stylesheet" href="{{ cdn(elixir('assets/css/api.css')) }}">

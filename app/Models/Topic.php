@@ -210,7 +210,7 @@ class Topic extends Model
 
     public function isArticle()
     {
-        return $this->category_id == config('phphub.winning_category_id');
+        return $this->category_id == config('phphub.blog_category_id');
     }
 
     public function link($params = [])

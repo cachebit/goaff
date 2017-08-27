@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-Laravel China 名人堂 @parent
+Affren 名人堂 @parent
 @stop
 
 @section('content')

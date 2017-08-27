@@ -6,9 +6,10 @@ return [
     'actived_time_for_update' => 'actived_time_for_update',
     'actived_time_data'       => 'actived_time_data',
 
-    'winning_category_id'       => env('WINNING_CATEGORY_ID')?:3,
+    'blog_category_id'       => env('BLOG_CATEGORY_ID')?:3,
 
     'discussion_category_id'       => env('DISCUSSION_CATEGORY_ID')?:4,
+    'winning_category_id'       => env('WINNING_CATEGORY_ID')?:5,
 
     'follow_category_id'       => env('FOLLOW_CATEGORY_ID')?:7,
     'case_category_id'       => env('CASE_CATEGORY_ID')?:8,

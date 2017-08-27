@@ -107,7 +107,7 @@
                   <input class="form-control" name="weibo_link" type="text" value="{{ $user->weibo_link}}">
               </div>
               <div class="col-sm-4 help-block">
-                微博个人主页链接，如：http://weibo.com/laravelnews
+                微博个人主页链接，如：http://weibo.com/affren
               </div>
           </div>
 
