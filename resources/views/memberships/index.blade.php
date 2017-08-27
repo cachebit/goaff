@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>会员管理</title>
-    <link rel="stylesheet" href="http://phphub5.app//build/assets/css/styles-d06047760d.css">
+    <link rel="stylesheet" href="/build/assets/css/styles-d06047760d.css">
   </head>
   <body>
     <div class="container">

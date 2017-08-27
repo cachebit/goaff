@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>用户会员变更记录</title>
-    <link rel="stylesheet" href="http://phphub5.app//build/assets/css/styles-d06047760d.css">
+    <link rel="stylesheet" href="/build/assets/css/styles-d06047760d.css">
   </head>
   <body>
     <div class="container">
