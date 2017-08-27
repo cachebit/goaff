@@ -32,7 +32,7 @@
 
     <div class="content-body entry-content panel-body ">
 
-      @include('topics.partials.body', array('body' => $topic->body))
+      @include('topics.partials.body', ['body' => $topic->body, 'unaccessable' => $unaccessable])
 
       <div data-lang-excellent="{{ lang('This topic has been mark as Excenllent Topic.') }}" data-lang-wiki="{{ lang('This is a Community Wiki.') }}" class="ribbon-container">
         @include('topics.partials.ribbon')
