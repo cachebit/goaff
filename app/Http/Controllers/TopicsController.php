@@ -60,6 +60,7 @@ class TopicsController extends Controller implements CreatorListener
 
     public function show($id, Request $request, $fromCode = false)
     {
+
         $topic = Topic::where('id', $id)->with('user', 'lastReplyUser')->firstOrFail();
         if ($topic->isArticle() && $topic->is_draft == 'yes') {
             $this->authorize('show_draft', $topic);
@@ -101,7 +102,7 @@ class TopicsController extends Controller implements CreatorListener
         $cover = $topic->cover();
 
         if ($topic->isArticle()) {
-
+          //这里通向专栏
             if (UserRequest::is('topics*')) {
                 return redirect()->to($topic->link());
             }
@@ -117,11 +118,25 @@ class TopicsController extends Controller implements CreatorListener
         } else {
             $userTopics = $topic->byWhom($topic->user_id)->withoutDraft()->withoutBoardTopics()->recent()->limit(3)->get();
 
+            //阅读权限更新
+            $unaccessable = false;
+
+            if( (! auth()->check()) || (! auth()->user()->access($topic) ) ){
+              $unaccessable = true;
+              $topic->body = $this->unaccessable($topic->body);
+            }
+
             return view('topics.show', compact(
                                 'topic', 'replies', 'categoryTopics',
                                 'category', 'banners', 'cover',
-                                'votedUsers', 'userTopics', 'revisionHistory'));
+                                'votedUsers', 'userTopics', 'revisionHistory','unaccessable'
+                              ));
         }
+    }
+
+    protected function unaccessable($body)
+    {
+       return mb_substr($body,0,140).'……';
     }
 
     public function edit($id)

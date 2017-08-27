@@ -51,7 +51,7 @@ class User extends Model implements AuthenticatableContract,
     }
     use SoftDeletes { restore as private restoreSoftDelete; }
     use FollowTrait;
-    protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at','membership_started_at', 'membership_expired_at'];
 
     protected $table   = 'users';
     protected $guarded = ['id', 'is_banned'];
@@ -201,5 +201,35 @@ class User extends Model implements AuthenticatableContract,
         $show_data = Cache::get($show_key);
         $show_data[$this->id] = $now;
         Cache::forever($show_key, $show_data);
+    }
+
+    public function access(\App\Models\Topic $topic)
+    {
+        if($topic->isPublic){
+          return true;
+        }
+
+        if($this->may('ultimate_accessable')){
+
+          return true;
+
+        }elseif($this->may('uppergrade_accessable')){
+
+          return true;
+
+        }elseif($this->may('annually_accessable')){
+
+          if($this->membership_expired_at >= $topic->created_at){
+            return true;
+          }
+
+        }elseif($this->may('monthly_accessable')){
+          if($this->membership_expired_at >= $topic->created_at &&  $this->membership_started_at->subMonth() <= $topic->created_at ){
+            return true;
+          }
+
+        }else{
+          return false;
+        }
     }
 }

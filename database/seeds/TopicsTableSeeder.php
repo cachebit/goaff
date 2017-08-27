@@ -22,6 +22,10 @@ class TopicsTableSeeder extends Seeder
         });
         Topic::insert($topics->toArray());
 
+        Topic::where('id', 1)->update(['created_at' => \Carbon\Carbon::now()->subMonth()->addDay()]);
+        Topic::where('id', 2)->update(['created_at' => \Carbon\Carbon::now()->subMonth(2)]);
+        Topic::where('id', 3)->update(['isPublic' => true]);
+
         // Test User Topic Seeding
         $admin_topics = factory(Topic::class)->times(rand(1, 100))->make()->each(function ($topic) use ($faker, $categories) {
             $topic->user_id     = 1;

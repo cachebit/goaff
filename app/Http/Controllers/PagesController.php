@@ -17,11 +17,7 @@ class PagesController extends Controller
 {
     public function test()
     {
-        // $topic = Topic::create([
-        //
-        // ]);
-        //
-        // return view('test');
+        return view('test');
     }
 
     public function home(Topic $topic, Request $request)
@@ -81,8 +77,8 @@ class PagesController extends Controller
         $topics = Topic::excellent()->recent()->limit(20)->get();
 
         $channel =[
-            'title'       => 'Laravel China 社区',
-            'description' => '我们是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。',
+            'title'       => 'Affren.com Affilaite最新国外干货教程',
+            'description' => 'Affren 致力于第一时间分享国外 Affiliate Marketing 和 Media Buy 干货网文，让您紧跟节奏赚美元。',
             'link'        => url(route('feed')),
         ];
 

@@ -13,8 +13,8 @@ class AddExpirationToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-          $table->timestamp('membership_started_at')->nullable();
-          $table->timestamp('membership_expired_at')->nullable();
+          $table->timestamp('membership_started_at');
+          $table->timestamp('membership_expired_at');
           $table->string('membership')->default('Register');
           $table->integer('membership_cost')->default('0');
         });
