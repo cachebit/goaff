@@ -121,6 +121,19 @@ class CategoriesTableSeeder extends Seeder
             ),
             9 =>
             array(
+                'id'          => 14,
+                'parent_id'   => 0,
+                'post_count'  => 0,
+                'weight'      => 14,
+                'name'        => '翻译中',
+                'slug'        => 'foreshow',
+                'description' => '翻译中，即将发布。',
+                'created_at'  => '2016-07-03 10:00:00',
+                'updated_at'  => '2016-07-03 10:00:00',
+                'deleted_at'  => null,
+            ),
+            10 =>
+            array(
                 'id'          => 15,
                 'parent_id'   => 0,
                 'post_count'  => 0,
@@ -132,7 +145,7 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at'  => '2016-07-03 10:00:00',
                 'deleted_at'  => null,
             ),
-            10 =>
+            11 =>
             array(
                 'id'          => 16,
                 'parent_id'   => 0,
@@ -145,7 +158,7 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at'  => '2016-07-03 10:00:00',
                 'deleted_at'  => null,
             ),
-            11 =>
+            12 =>
             array(
                 'id'          => 17,
                 'parent_id'   => 0,
@@ -158,7 +171,7 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at'  => '2016-07-03 10:00:00',
                 'deleted_at'  => null,
             ),
-            12 =>
+            13 =>
             array(
                 'id'          => 18,
                 'parent_id'   => 0,
@@ -171,7 +184,7 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at'  => '2016-07-03 10:00:00',
                 'deleted_at'  => null,
             ),
-            13 =>
+            14 =>
             array(
                 'id'          => 19,
                 'parent_id'   => 0,
@@ -184,7 +197,7 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at'  => '2016-07-03 10:00:00',
                 'deleted_at'  => null,
             ),
-            14 =>
+            15 =>
             array(
                 'id'          => 20,
                 'parent_id'   => 0,
@@ -197,7 +210,7 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at'  => '2016-07-03 10:00:00',
                 'deleted_at'  => null,
             ),
-            15 =>
+            16 =>
             array(
                 'id'          => 3,
                 'parent_id'   => 0,
@@ -210,7 +223,7 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at'  => '2016-07-03 10:00:00',
                 'deleted_at'  => null,
             ),
-            16 =>
+            17 =>
             array(
                 'id'          => 4,
                 'parent_id'   => 0,
@@ -223,7 +236,7 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at'  => '2016-07-03 10:00:00',
                 'deleted_at'  => null,
             ),
-            17 =>
+            18 =>
             array(
                 'id'          => 5,
                 'parent_id'   => 0,
