@@ -1000,7 +1000,7 @@
             $('.forget-password').on('click', function(e) {
                 swal({
                     title: "忘记密码？",
-                    text: '请使用微信和 Github 账号尝试，能够直接登录即为注册过的账号。',
+                    text: '请联系管理员，并使用注册的邮箱给管理员发送邮件。',
                     type: "warning",
                     confirmButtonText: "知道了"
                 }).then(function() {

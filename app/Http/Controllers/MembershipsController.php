@@ -89,4 +89,36 @@ class MembershipsController extends Controller
         'membership_cost' => $request->membership_cost,
       ]);
     }
+
+    public function create()
+    {
+        if(auth()->check() && auth()->id() == 1){
+          return view('memberships.create');
+        }
+        return redirect('/');
+    }
+
+    public function store(Request $request)
+    {
+        if(auth()->check() && auth()->id() == 1){
+            $this->validate($request,[
+                'name' => 'required|max:50',
+                'email' => 'required|email|unique:users|max:255',
+            ]);
+
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => bcrypt('secret'),
+                'membership' => 'Register',
+                'verified' => true,
+            ]);
+
+            $user->is_banned = 'no';
+            $user->save();
+
+            return redirect('/memberships');
+        }
+        return redirect('/');
+    }
 }

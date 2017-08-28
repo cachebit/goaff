@@ -10,14 +10,8 @@ class DatabaseSeeder extends Seeder
         'LinksTableSeeder',
         'CategoriesTableSeeder',
         'BlogTableSeeder',
-        'TopicsTableSeeder',
-        'RepliesTableSeeder',
         'BannersTableSeeder',
-        'FollowersTableSeeder',
         'ActiveUsersTableSeeder',
-        'HotTopicsTableSeeder',
-        'SitesTableSeeder',
-        'OauthClientsTableSeeder',
     ];
 
     public function run()

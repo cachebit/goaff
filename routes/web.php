@@ -43,8 +43,8 @@ Route::patch('/users/{id}/update_password', 'UsersController@updatePassword')->n
 Route::get('/users/{id}/edit_social_binding', 'UsersController@editSocialBinding')->name('users.edit_social_binding');
 
 Route::get('/users', 'UsersController@index')->name('users.index');
-Route::get('/users/create', 'UsersController@create')->name('users.create');
-Route::post('/users', 'UsersController@store')->name('users.store');
+// Route::get('/users/create', 'UsersController@create')->name('users.create');
+// Route::post('/users', 'UsersController@store')->name('users.store');
 Route::get('/users/{id}', 'UsersController@show')->name('users.show');
 Route::get('/users/{id}/edit', 'UsersController@edit')->name('users.edit');
 Route::patch('/users/{id}', 'UsersController@update')->name('users.update');
@@ -63,6 +63,9 @@ Route::put('/messages/{id}', 'MessagesController@update')->name('messages.update
 
 Route::get('/email-verification-required', 'UsersController@emailVerificationRequired')->name('email-verification-required');
 Route::post('/users/send-verification-mail', 'UsersController@sendVerificationMail')->name('users.send-verification-mail');
+
+Route::get('/users/create', 'MembershipsController@create')->name('users.create');
+Route::post('/users', 'MembershipsController@store')->name('users.store');
 
 # ------------------ Authentication ------------------------
 
