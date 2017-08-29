@@ -131,12 +131,12 @@ class TopicsController extends Controller implements CreatorListener
             if( auth()->check() ){
                 if( ! auth()->user()->access($topic) ){
                     $unaccessable = true;
-                    $topic->body = $this->unaccessable($topic->body);
+                    $topic->body = $topic->excerpt;
                 }
             }else{
                 if( ! $topic->isPublic ){
                     $unaccessable = true;
-                    $topic->body = $this->unaccessable($topic->body);
+                    $topic->body = $topic->excerpt;
                 }
             }
 
