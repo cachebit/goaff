@@ -167,7 +167,6 @@ Route::get('/articles/{id}/{slug?}', "TopicsController@show")->name('articles.sh
 Route::get('{name}', 'PagesController@wildcard')->name('wildcard');
 
 
-
 Route::get('/tutorial',function(){
     return redirect('/categories/16', 301);
 });
@@ -212,6 +211,7 @@ Route::get('/affiliate-marketing-key-points-2',function(){
 });
 Route::get('/what-is-affiliate-marketing',function(){
     return redirect('/topics/8/shen-me-shi-affiliate-marketing', 301);
+});
 Route::get('/what-is-ad-network',function(){
     return redirect('/topics/9/shen-me-shi-ad-network', 301);
 });
