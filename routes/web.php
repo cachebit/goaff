@@ -398,6 +398,62 @@ Route::get('/type-of-traffic',function(){
     return redirect('/topics/71/liu-liang-de-zhong-yao-lei-xing-ru-he-fa-hui-ta-men-xiao-yong-affiliate-marketing-wan-quan-zhi-nan-34', 301);
 });
 
+# ------------------ Baidu.com result ------------------------
+Route::get('tag/mad-letters-by-malan-madsociety-net',function(){
+    return redirect('/categories/10', 301);
+});
+Route::get('/page/4',function(){
+    return redirect('/', 301);
+});
+Route::get('/category/nuts/basic',function(){
+    return redirect('/topics?filter=free', 301);
+});
+Route::get('/affilate-tools',function(){
+    return redirect('/categories/20', 301);
+});
+Route::get('/category/basic/wiki',function(){
+    return redirect('/categories/4', 301);
+});
+Route::get('/tag/landing-page',function(){
+    return redirect('/topics/14/shen-me-shi-landing-pages', 301);
+});
+Route::get('/tag/spy',function(){
+    return redirect('/categories/20', 301);
+});
+Route::get('/tag/traffic-source',function(){
+    return redirect('/categories/17', 301);
+});
+Route::get('/page/3',function(){
+    return redirect('/', 301);
+});
+Route::get('/page/2',function(){
+    return redirect('/', 301);
+});
+Route::get('/page/1',function(){
+    return redirect('/', 301);
+});
+Route::get('/tag/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F',function(){
+    return redirect('/categories/18', 301);
+});
+Route::get('/tag/6wamc',function(){
+    return redirect('/topics/21/stm-lun-tan-gong-kai-ke-1-xin-ren-ru-xing-de-4-bu-ji-hua', 301);
+});
+Route::get('/tag/pop-traffic-source',function(){
+    return redirect('/topics/17/xin-shou-fu-yin-ni-zhi-bu-zhi-dao-de-pop-liu-liang-da-qi-di', 301);
+});
+Route::get('/tag/%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97',function(){
+    return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
+});
+Route::get('/category/nuts/guide',function(){
+    return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
+});
+Route::get('/tag/a-complete-guide-to-affiliate-marketing-finch',function(){
+    return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
+});
+Route::get('/tag/complete-introduction',function(){
+    return redirect('/topics/2/kai-shi-media-buy-yi-gei-media-buy-xin-shou-de-4-ge-ti-shi', 301);
+});
+
 # ------------------ Wild Card ------------------------
 
 

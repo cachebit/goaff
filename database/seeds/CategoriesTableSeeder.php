@@ -249,6 +249,19 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at'  => '2016-07-03 10:00:00',
                 'deleted_at'  => null,
             ),
+            19 =>
+            array(
+                'id'          => 21,
+                'parent_id'   => 0,
+                'post_count'  => 0,
+                'weight'      => 21,
+                'name'        => '外国网文',
+                'slug'        => 'web-articles',
+                'description' => '外国论坛、博客最新文章。',
+                'created_at'  => '2016-07-03 10:00:00',
+                'updated_at'  => '2016-07-03 10:00:00',
+                'deleted_at'  => null,
+            ),
         ));
     }
 }

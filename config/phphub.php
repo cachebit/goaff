@@ -20,6 +20,7 @@ return [
     'finch_category_id'       => env('FINCH_CATEGORY_ID')?:11,
     'charlesngo_category_id'         => env('CHARLESNGO_CATEGORY_ID')?:12,
     'malan_category_id'       => env('MALAN_CATEGORY_ID')?:13,
+    'web_category_id'       => env('WEB_CATEGORY_ID')?:21,
 
     'foreshow_category_id'         => env('FORESHOW_CATEGORY_ID')?:14,
     'recommend_category_id'         => env('RECOMMEND_CATEGORY_ID')?:15,
