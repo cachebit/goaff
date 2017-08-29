@@ -423,6 +423,21 @@ Route::get('/tag/spy',function(){
 Route::get('/tag/traffic-source',function(){
     return redirect('/categories/17', 301);
 });
+Route::get('/page/8',function(){
+    return redirect('/', 301);
+});
+Route::get('/page/7',function(){
+    return redirect('/', 301);
+});
+Route::get('/page/6',function(){
+    return redirect('/', 301);
+});
+Route::get('/page/5',function(){
+    return redirect('/', 301);
+});
+Route::get('/page/4',function(){
+    return redirect('/', 301);
+});
 Route::get('/page/3',function(){
     return redirect('/', 301);
 });
@@ -432,7 +447,7 @@ Route::get('/page/2',function(){
 Route::get('/page/1',function(){
     return redirect('/', 301);
 });
-Route::get('/tag/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F',function(){
+Route::get('/tag/广告联盟',function(){
     return redirect('/categories/18', 301);
 });
 Route::get('/tag/6wamc',function(){
@@ -441,7 +456,7 @@ Route::get('/tag/6wamc',function(){
 Route::get('/tag/pop-traffic-source',function(){
     return redirect('/topics/17/xin-shou-fu-yin-ni-zhi-bu-zhi-dao-de-pop-liu-liang-da-qi-di', 301);
 });
-Route::get('/tag/%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97',function(){
+Route::get('/tag/完全指南',function(){
     return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
 });
 Route::get('/category/nuts/guide',function(){
@@ -451,8 +466,152 @@ Route::get('/tag/a-complete-guide-to-affiliate-marketing-finch',function(){
     return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
 });
 Route::get('/tag/complete-introduction',function(){
-    return redirect('/topics/2/kai-shi-media-buy-yi-gei-media-buy-xin-shou-de-4-ge-ti-shi', 301);
+    return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
 });
+
+# ------------------ Baidu.com result ------------------------
+Route::get('/email',function(){
+    return redirect('/topics/74/you-jian-ding-yue-affren-affren-de-guan-fang-email', 301);
+});
+Route::get('/dashang',function(){
+    return redirect('/topics/75/juan-zeng-he-da-shang', 301);
+});
+Route::get('/qq',function(){
+    return redirect('/topics/76/guan-fang-qq-he-guan-fang-qq-qun', 301);
+});
+Route::get('/button',function(){
+    return redirect('/topics/5/shen-me-shi-cta', 301);
+});
+Route::get('/qrcode_1499751389013',function(){
+    return redirect('/topics/77/guan-fang-wei-xin-he-wei-xin-gong-zhong-hao', 301);
+});
+Route::get('/banner',function(){
+    return redirect('/', 301);
+});
+Route::get('/icon',function(){
+    return redirect('/', 301);
+});
+Route::get('/newbie-affiliate-tutorial',function(){
+    return redirect('/topics/72/affiliate-marketing-he-media-buy-pei-xun', 301);
+});
+Route::get('/tag/popads',function(){
+    return redirect('/topics/31/popads-jian-jie-he-chang-jian-wen-ti', 301);
+});
+Route::get('/afflow-2',function(){
+    return redirect('/topics/33/afflow-monetizer-jian-jie-he-chang-jian-wen-ti', 301);
+});
+Route::get('/popads-banner',function(){
+    return redirect('/topics/31/popads-jian-jie-he-chang-jian-wen-ti', 301);
+});
+Route::get('/tag/propellerads',function(){
+    return redirect('/topics/66/propellerads-zhu-ce-liu-cheng-jiao-ni-propellerads-zen-me-zhu-ce', 301);
+});
+Route::get('/chinese-tutorial',function(){
+    return redirect('/categories/16', 301);
+});
+Route::get('/afflow-banner',function(){
+    return redirect('/topics/33/afflow-monetizer-jian-jie-he-chang-jian-wen-ti', 301);
+});
+Route::get('/tag/adwords',function(){
+    return redirect('/topics/58/google-adwords-ppc-guang-gao-de-message-match-xin-xi-pi-pei', 301);
+});
+Route::get('/tag/ppc',function(){
+    return redirect('/topics/63/pay-per-call-affiliate-marketing-wan-quan-zhi-nan-29', 301);
+});
+Route::get('/banner-3',function(){
+    return redirect('/', 301);
+});
+Route::get('/tag/cloak',function(){
+    return redirect('/topics/44/shen-me-shi-cloaking-shen-me-shi-cloak-2016-premium-posts-finch-1', 301);
+});
+Route::get('/challenge-1',function(){
+    return redirect('/topics/21/stm-lun-tan-gong-kai-ke-1-xin-ren-ru-xing-de-4-bu-ji-hua', 301);
+});
+Route::get('/stm-forum-chinese',function(){
+    return redirect('/topics/73/gai-ban-shuo-ming', 301);
+});
+Route::get('/qq-button-3',function(){
+    return redirect('/topics/76/guan-fang-qq-he-guan-fang-qq-qun', 301);
+});
+Route::get('/cropped-icon-png-3',function(){
+    return redirect('/', 301);
+});
+Route::get('/tag/affiliate-network',function(){
+    return redirect('/categories/18', 301);
+});
+Route::get('/qq-button-2',function(){
+    return redirect('/topics/76/guan-fang-qq-he-guan-fang-qq-qun', 301);
+});
+Route::get('/click-to-get',function(){
+    return redirect('/topics/5/shen-me-shi-cta', 301);
+});
+Route::get('/tag/上量',function(){
+    return redirect('/categories/17', 301);
+});
+Route::get('/afflow-popads-affiliate-marketing-guide-by-cuihuanghuang',function(){
+    return redirect('/topics/72/affiliate-marketing-he-media-buy-pei-xun', 301);
+});
+Route::get('/tag/ideas-worth-spread',function(){
+    return redirect('/topics?filter=free', 301);
+});
+Route::get('/affiliate-tools-spy-buy',function(){
+    return redirect('/categories/20', 301);
+});
+Route::get('/qq-button-2-2',function(){
+    return redirect('/topics/76/guan-fang-qq-he-guan-fang-qq-qun', 301);
+});
+Route::get('/affren-qq-to-chat',function(){
+    return redirect('/topics/76/guan-fang-qq-he-guan-fang-qq-qun', 301);
+});
+Route::get('/popads-connection-speeds-2',function(){
+    return redirect('/topics/31/popads-jian-jie-he-chang-jian-wen-ti', 301);
+});
+Route::get('/complete-introduction/page/5',function(){
+    return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
+});
+Route::get('/complete-introduction/page/4',function(){
+    return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
+});
+Route::get('/complete-introduction/page/3',function(){
+    return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
+});
+Route::get('/complete-introduction/page/2',function(){
+    return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
+});
+Route::get('/complete-introduction/page/1',function(){
+    return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
+});
+Route::get('/tag/volum-up-the-traffic',function(){
+    return redirect('/categories/17', 301);
+});
+Route::get('/tag/2016-premium-posts-finch',function(){
+    return redirect('/topics/42/2016-nian-gan-huo-he-ji-finch-sells-premium-posts', 301);
+});
+Route::get('/tag/ideas-worth-spread/page/2',function(){
+    return redirect('/topics?filter=free', 301);
+});
+Route::get('/tag/pop-traffic-source/page/2',function(){
+    return redirect('/topics/17/xin-shou-fu-yin-ni-zhi-bu-zhi-dao-de-pop-liu-liang-da-qi-di', 301);
+});
+Route::get('/finch-sells-premium-posts-2016-ed-1',function(){
+    return redirect('/topics/42/2016-nian-gan-huo-he-ji-finch-sells-premium-posts', 301);
+});
+Route::get('/affiliate-marketing-的几个关键问题（5）：获得免费angles图像landing-page',function(){
+    return redirect('/topics/55/affiliate-marketing-de-ji-ge-guan-jian-wen-ti-5-huo-de-mian-fei-angles-tu-xiang-landing-page', 301);
+});
+Route::get('/tag/a-complete-guide-to-affiliate-marketing-finch/page/4',function(){
+    return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
+});
+Route::get('/tag/a-complete-guide-to-affiliate-marketing-finch/page/3',function(){
+    return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
+});
+Route::get('/tag/a-complete-guide-to-affiliate-marketing-finch/page/2',function(){
+    return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
+});
+Route::get('/tag/a-complete-guide-to-affiliate-marketing-finch/page/1',function(){
+    return redirect('/topics/15/stm-lun-tan-da-shen-finch-li-zuo-affiliate-marketing-wan-quan-zhi-nan-lian-zai-geng-xin', 301);
+});
+
 
 # ------------------ Wild Card ------------------------
 
