@@ -150,7 +150,7 @@ class TopicsController extends Controller implements CreatorListener
 
     protected function unaccessable($body)
     {
-       return mb_substr($body,0,140).'……';
+       return mb_substr( strip_tags($body),0,140).'……';
     }
 
     public function edit($id)
