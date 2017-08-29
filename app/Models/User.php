@@ -205,6 +205,9 @@ class User extends Model implements AuthenticatableContract,
 
     public function access(\App\Models\Topic $topic)
     {
+        if($topic->isPublic){
+          return true;
+        }
 
         if($this->may('ultimate_accessable')){
 
