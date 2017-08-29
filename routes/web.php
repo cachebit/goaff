@@ -161,10 +161,6 @@ Route::get('/topics/{id}/{slug?}', 'TopicsController@show')->name('topics.show')
 Route::get('/articles/{id}/{slug?}', "TopicsController@show")->name('articles.show');
 
 
-# ------------------ Wild Card ------------------------
-
-
-Route::get('{name}', 'PagesController@wildcard')->name('wildcard');
 
 
 Route::get('/tutorial',function(){
@@ -401,3 +397,8 @@ Route::get('/popads-setting-experience',function(){
 Route::get('/type-of-traffic',function(){
     return redirect('/topics/71/liu-liang-de-zhong-yao-lei-xing-ru-he-fa-hui-ta-men-xiao-yong-affiliate-marketing-wan-quan-zhi-nan-34', 301);
 });
+
+# ------------------ Wild Card ------------------------
+
+
+Route::get('{name}', 'PagesController@wildcard')->name('wildcard');
