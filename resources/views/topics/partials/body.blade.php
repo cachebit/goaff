@@ -5,7 +5,7 @@
 @if(isset($unaccessable) && $unaccessable)
   <div class="well">
     <p>
-        <a href="/topics/73/gai-ban-shuo-ming">点击加入</a> Affilaite Marketing 和 Media Buy 付费分享论坛。实时更新国外最新教程、资讯。
+        非会员无法访问全文。<a href="/topics/73/gai-ban-shuo-ming">点击加入</a> Affilaite Marketing 和 Media Buy 付费分享论坛。实时更新国外最新教程、资讯。
 
     </p>
   </div>
