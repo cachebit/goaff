@@ -2,11 +2,15 @@
     <div class="row">
         <br/>
         <div class="col-md-6">
-            <img class="img-responsive" src="/assets/images/banner.png" alt="">
+          <a href="/">
+            <img class="img-responsive" src="/assets/images/banner.png" alt="affren-logo">
+          </a>
         </div>
 
         <div class="col-md-6">
-            <img class="img-responsive pull-right" src="/assets/images/ad.png" alt="">
+          <a href="/topics/73/gai-ban-shuo-ming">
+            <img class="img-responsive pull-right" src="/assets/images/banner-ad.png" alt="affren-banner-ad">
+          </a>
         </div>
     </div>
 </div>
