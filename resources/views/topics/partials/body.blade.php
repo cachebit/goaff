@@ -4,7 +4,10 @@
 
 @if(isset($unaccessable) && $unaccessable)
   <div class="well">
-    <p>很抱歉，您所在的用户组无法查看全文，如果你未登录，请登录；如果您未注册，请注册。<br/>成为会员，畅所欲言，欢迎加入我们。</p>
+    <p>
+        本站为 Affilaite Marketing 和 Media Buy 付费分享论坛。实时更新国外最新教程、资讯。欢迎加入，详见：
+        <a href="/topics/73/gai-ban-shuo-ming">改版说明</a>
+    </p>
   </div>
 @endif
 
