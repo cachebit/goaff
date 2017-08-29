@@ -128,9 +128,16 @@ class TopicsController extends Controller implements CreatorListener
             //阅读权限更新
             $unaccessable = false;
 
-            if( (! auth()->check() && $topic->isPulic) || (! auth()->user()->access($topic) ) ){
-              $unaccessable = true;
-              $topic->body = $this->unaccessable($topic->body);
+            if( auth()->check() ){
+                if( ! auth()->user()->access($topic) ){
+                    $unaccessable = true;
+                    $topic->body = $this->unaccessable($topic->body);
+                }
+            }else{
+                if( ! $topic->isPulic ){
+                    $unaccessable = true;
+                    $topic->body = $this->unaccessable($topic->body);
+                }
             }
 
             return view('topics.show', compact(
