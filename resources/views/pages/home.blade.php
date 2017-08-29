@@ -11,7 +11,7 @@
 <div class="panel panel-default list-panel home-topic-list">
   <div class="panel-heading">
     <h3 class="panel-title text-center">
-      {{ lang('Excellent Topics') }} &nbsp;
+      最新公开文章 &nbsp;
       <a href="{{ route('feed') }}" style="color: #E5974E; font-size: 14px;" target="_blank">
          <i class="fa fa-rss"></i>
       </a>
@@ -25,8 +25,8 @@
 
   <div class="panel-footer text-right">
 
-  	<a href="topics?filter=excellent" class="more-excellent-topic-link">
-  		{{ lang('More Excellent Topics') }} <i class="fa fa-arrow-right" aria-hidden="true"></i>
+  	<a href="topics?filter=free" class="more-excellent-topic-link">
+  		所有公开文章 <i class="fa fa-arrow-right" aria-hidden="true"></i>
   	</a>
   </div>
 </div>

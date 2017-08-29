@@ -26,7 +26,7 @@ trait TopicFilterable
 
     public function getTopicFilter($request_filter)
     {
-        $filters = ['noreply', 'vote', 'excellent','recent', 'wiki', 'jobs', 'excellent-pinned', 'index'];
+        $filters = ['free', 'noreply', 'vote', 'excellent','recent', 'wiki', 'jobs', 'excellent-pinned', 'index'];
         if (in_array($request_filter, $filters)) {
             return $request_filter;
         }
@@ -46,6 +46,9 @@ trait TopicFilterable
                 break;
             case 'vote':
                 return $query->pinned()->orderBy('vote_count', 'desc')->recent();
+                break;
+            case 'free':
+                return $query->where('isPublic', true)->orderBy('created_at', 'desc')->recent();
                 break;
             case 'excellent':
                 return $query->excellent()->recent();
