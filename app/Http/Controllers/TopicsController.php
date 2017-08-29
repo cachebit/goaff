@@ -134,7 +134,7 @@ class TopicsController extends Controller implements CreatorListener
                     $topic->body = $this->unaccessable($topic->body);
                 }
             }else{
-                if( ! $topic->isPulic ){
+                if( ! $topic->isPublic ){
                     $unaccessable = true;
                     $topic->body = $this->unaccessable($topic->body);
                 }
