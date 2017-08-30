@@ -32,7 +32,7 @@
 
               @foreach ($categories as $value)
                   {{-- 如果用户可以发布公告，并且是 id == 3 的话 --}}
-                  @if($value->id == config('phphub.discussion_category_id') || $value->id == config('phphub.winning_category_id') || Auth::user()->can('compose_announcement'))
+                  @if($value->id == config('phphub.discussion_category_id') || $value->id == config('phphub.winning_category_id') || $value->id == config('phphub.recommend_category_id') || Auth::user()->can('compose_announcement'))
                       @if($value->id != config('phphub.admin_board_cid') || Auth::user()->can('access_board'))
                           <option value="{{ $value->id }}" {{ (count($category) != 0 && $value->id == $category->id) ? 'selected' : '' }} >{{ $value->name }}</option>
                       @endif

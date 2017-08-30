@@ -51,9 +51,7 @@ class TopicsController extends Controller implements CreatorListener
           $categories = Category::where('id', '!=', config('phphub.blog_category_id'))
                                   ->get();
         }elseif(auth()->check() && auth()->id() == 15){
-          $categories = Category::where('id', '>=', config('phphub.discussion_category_id'))
-                                  ->where('id', '<=', config('phphub.winning_category_id'))
-                                  ->orWhere('id', 15)
+          $categories = Category::whereIn('id', [config('phphub.discussion_category_id'), config('phphub.winning_category_id'), config('phphub.recommend_category_id')])
                                   ->get();
         }else{
           $categories = Category::where('id', '>=', config('phphub.discussion_category_id'))
