@@ -109,21 +109,6 @@
   </div>
   @endif
 
-
-  <!-- 赞助 可以放培训 -->
-  <div class="panel panel-default corner-radius">
-    <div class="panel-body text-center sidebar-sponsor-box">
-        @if(isset($banners['sidebar-sponsor']))
-            @foreach($banners['sidebar-sponsor'] as $banner)
-                <a class="sidebar-sponsor-link" href="{{ $banner->link }}" target="_blank">
-                    <img src="{{ $banner->image_url }}" class="popover-with-html" data-content="{{ $banner->title }}" width="100%">
-                </a>
-                <hr>
-            @endforeach
-        @endif
-  </div>
-  </div>
-
 <!-- 友情社区 放一些推荐文章-->
 @if (Route::currentRouteName() != 'home')
   @if (isset($links) && count($links))
@@ -141,6 +126,21 @@
     </div>
   @endif
 @endif
+
+
+<!-- 赞助 可以放培训 -->
+<div class="panel panel-default corner-radius">
+  <div class="panel-body text-center sidebar-sponsor-box">
+      @if(isset($banners['sidebar-sponsor']))
+          @foreach($banners['sidebar-sponsor'] as $banner)
+              <a class="sidebar-sponsor-link" href="{{ $banner->link }}" target="_blank">
+                  <img src="{{ $banner->image_url }}" class="popover-with-html" data-content="{{ $banner->title }}" width="100%">
+              </a>
+              <hr>
+          @endforeach
+      @endif
+</div>
+</div>
 
 <!-- App下载 -->
 <!-- @if (Route::currentRouteName() == 'topics.index')
