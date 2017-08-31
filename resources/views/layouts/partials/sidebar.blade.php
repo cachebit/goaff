@@ -74,11 +74,20 @@
       </a>
   </div> -->
 
+  <div class="panel panel-dafault">
+    <div class="panel-body">
+      <ul class="list-unstyled text-danger">
+        <li><p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 欢迎加 QQ:3362259409</p></li>
+        <li><p><span class="glyphicon glyphicon-star" aria-hidden="true"></span> 欢迎加入QQ群:570403595</p></li>
+      </ul>
+    </div>
+  </div>
+
   @if (Route::currentRouteName() == 'topics.index')
       @include('layouts.partials._resources_panel')
   @endif
 
-  <!-- @if (isset($active_users) && count($active_users))
+  @if (isset($active_users) && count($active_users))
       <div class="panel panel-default corner-radius panel-active-users">
         <div class="panel-heading text-center">
           <h3 class="panel-title">{{ lang('Active Users') }}（<a href="{{ route('hall_of_fames') }}"><i class="fa fa-star" aria-hidden="true"></i> {{ lang('Hall of Fame') }}</a>）</h3>
@@ -87,7 +96,7 @@
           @include('topics.partials.active_users')
         </div>
       </div>
-  @endif -->
+  @endif
 
   @if (isset($hot_topics) && count($hot_topics))
   <div class="panel panel-default corner-radius panel-hot-topics">
@@ -101,8 +110,8 @@
   @endif
 
 
-  <!-- 赞助 -->
-  <!-- <div class="panel panel-default corner-radius">
+  <!-- 赞助 可以放培训 -->
+  <div class="panel panel-default corner-radius">
     <div class="panel-body text-center sidebar-sponsor-box">
         @if(isset($banners['sidebar-sponsor']))
             @foreach($banners['sidebar-sponsor'] as $banner)
@@ -113,14 +122,14 @@
             @endforeach
         @endif
   </div>
-  </div> -->
+  </div>
 
-<!-- 友情社区 -->
-<!-- @if (Route::currentRouteName() != 'home')
+<!-- 友情社区 放一些推荐文章-->
+@if (Route::currentRouteName() != 'home')
   @if (isset($links) && count($links))
     <div class="panel panel-default corner-radius">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">{{ lang('Links') }}</h3>
+        <h3 class="panel-title">推荐系列文章</h3>
       </div>
       <div class="panel-body text-center" style="padding-top: 5px;">
         @foreach ($links as $link)
@@ -131,7 +140,7 @@
       </div>
     </div>
   @endif
-@endif -->
+@endif
 
 <!-- App下载 -->
 <!-- @if (Route::currentRouteName() == 'topics.index')
@@ -149,32 +158,30 @@
 
 @endif -->
 
-<!-- <div id="sticker">
+<div id="sticker">
 
   @include('layouts.partials._resources_panel')
 
+  <!-- <div class="panel panel-default corner-radius" style="color:#a5a5a5">
+    <div class="panel-body">
+        <ul class="list-unstyled text-danger">
+          <li><p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 欢迎加 Affren QQ:3362259409</p></li>
+          <li><p><span class="glyphicon glyphicon-star" aria-hidden="true"></span> 欢迎加入QQ群:570403595</p></li>
+        </ul>
+    </div>
+  </div> -->
+
   <div class="panel panel-default corner-radius" style="color:#a5a5a5">
     <div class="panel-body text-center">
-        <a href="http://estgroupe.com/" style="color:#a5a5a5">
-            <img src="https://dn-phphub.qbox.me/uploads/images/201612/12/1/iq7WQc2iuW.png" style="width: 20px;margin-right: 4px;margin-top: -4px;">
+        <a href="{{ Auth::check() ? '/messages/to/1' : 'mailto:news@affren.com'}}" style="color:#a5a5a5">
             <span style="margin-top: 7px;display: inline-block;">
-                优帆远扬 - 创造不息，交付不止
+                <i class="fa fa-heart" aria-hidden="true" style="color: rgba(232, 146, 136, 0.89);"></i> 建议反馈？请私信 Affren
             </span>
         </a>
     </div>
   </div>
 
-  <div class="panel panel-default corner-radius" style="color:#a5a5a5">
-    <div class="panel-body text-center">
-        <a href="{{ Auth::check() ? 'https://laravel-china.org/messages/to/1' : 'mailto:summer@yousails.com'}}" style="color:#a5a5a5">
-            <span style="margin-top: 7px;display: inline-block;">
-                <i class="fa fa-heart" aria-hidden="true" style="color: rgba(232, 146, 136, 0.89);"></i> 建议反馈？请私信 Summer
-            </span>
-        </a>
-    </div>
-  </div>
-
-</div> -->
+</div>
 
 </div>
 <div class="clearfix"></div>
