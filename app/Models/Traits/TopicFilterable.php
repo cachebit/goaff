@@ -51,7 +51,7 @@ trait TopicFilterable
                 return $query->where('created_at','>=', \Carbon\Carbon::now()->subMonth())->orderBy('created_at', 'desc')->recent();
                 break;
             case 'free':
-                return $query->where('isPublic', true)->orderBy('created_at', 'desc')->recent();
+                return $query->where('isPublic', true)->recent();
                 break;
             case 'excellent':
                 return $query->excellent()->recent();
