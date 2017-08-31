@@ -6,11 +6,6 @@
 
               <p class="padding-top-xsm">本站提供<a href="http://www.affren.com/" target="_blank">Affiliate教程</a>，实时翻译最新最全的国外 <a href="http://www.affren.com/" target="_blank">Affiliate Marketing</a> 和 <a href="http://www.affren.com/" target="_blank">Media Buy</a> 教程、博客文章，并有大神提供Affiliate培训，让您紧跟赚美元的节奏。</p>
 
-              <div class="text-md " >
-                  <a class="popover-with-html" data-content="反馈问题" target="_blank" style="padding-right:8px" href="mailto:news@affren.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-                  <a class="popover-with-html" data-content="关注「Affren微博」" target="_blank" style="padding-right:8px" href="http://weibo.com/affren"><i class="fa fa-weibo" aria-hidden="true"></i></a>
-                  <a class="popover-with-html" data-content="扫码关注微信订阅号：「Affren」" target="_blank" style="padding-right:8px" href="#"><i class="fa fa-weixin" aria-hidden="true"></i></a>
-              </div>
               <br>
               <span style="font-size:0.9em;color: #fff;">
                   Powered by <a href="https://github.com/summerblue/phphub5" style="color: #fff;" target="_blank" rel="external nofollow">PHPHub</a>
