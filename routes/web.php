@@ -106,6 +106,9 @@ Route::patch('/topics/{id}', 'TopicsController@update')->name('topics.update');
 Route::delete('/topics/{id}', 'TopicsController@destroy')->name('topics.destroy');
 Route::post('/topics/{id}/append', 'TopicsController@append')->name('topics.append');
 
+Route::get('/topics/ispublic', 'TopicsController@isPublicManager');
+Route::patch('/topics/{topic}/ispublic', 'TopicsController@togglePublic')->name('topics.togglePublic');
+
 # ------------------ User Topic Actions ------------------------
 
 Route::group(['before' => 'auth'], function () {

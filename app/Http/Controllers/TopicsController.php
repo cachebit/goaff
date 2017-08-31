@@ -44,6 +44,29 @@ class TopicsController extends Controller implements CreatorListener
         return view('topics.index', compact('topics', 'links', 'banners', 'active_users', 'hot_topics'));
     }
 
+    public function isPublicManager()
+    {
+        if(auth()->check() && auth()->id() == 1){
+          $topics = Topic::latest()->paginate(100);
+          return view('topics.is_public_manager', compact('topics'));
+        }else{
+          return redirect('/topics');
+        }
+
+    }
+
+    public function togglePublic(Request $request, $id)
+    {
+        $this->validate($request,[
+          'isPublic' => 'required',
+        ]);
+        $topic = Topic::findOrFail($id);
+        $topic->isPublic = $request->isPublic;
+        $topic->save();
+
+        return redirect('topics/ispublic');
+    }
+
     public function create(Request $request)
     {
         $category = Category::find($request->input('category_id'));
