@@ -25,7 +25,7 @@
                   <ul class="list-unstyled">
                     @if(isset($banners['footer-sponsor']))
                         @foreach($banners['footer-sponsor'] as $banner)
-                            <a href="{{ $banner->link }}" target="_blank"><img src="{{ $banner->image_url }}" class="popover-with-html footer-sponsor-link" width="98" data-placement="top" data-content="{{ $banner->title }}"></a>
+                            <a href="{{ $banner->link }}" target="_blank">$banner->title</a>
                         @endforeach
                     @endif
                   </ul>
