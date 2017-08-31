@@ -8,8 +8,8 @@
         </div>
 
         <div class="col-md-6">
-          <a href="/topics/73/gai-ban-shuo-ming">
-            <img class="img-responsive pull-right" src="/assets/images/banner-ad.png" alt="affren-banner-ad">
+          <a href="/topics/78/hang-ye-li-100-mei-jin-hai-neng-zuo-shi-mo#">
+            <img class="img-responsive pull-right" src="/assets/images/banner-ad.gif" alt="affren-banner-ad">
           </a>
         </div>
     </div>
