@@ -25,8 +25,8 @@ class PagesController extends Controller
         if (Auth::check()) {
             return app(ActivityController::class)->index($request);
         } else {
-            // $topics = $topic->getTopicsWithFilter('excellent');
-            $topics = Topic::where('isPublic', true)->get();
+            $topics = $topic->getTopicsWithFilter('free');
+            
             $banners = Banner::allByPosition();
             return view('pages.home', compact('topics', 'banners'));
         }

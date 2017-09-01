@@ -25,7 +25,7 @@
 
   <div class="panel-footer text-right">
 
-  	<a href="topics?filter=free" class="more-excellent-topic-link">
+  	<a href="{{ route('topics.free_topics') }}" class="more-excellent-topic-link">
   		所有公开文章 <i class="fa fa-arrow-right" aria-hidden="true"></i>
   	</a>
   </div>
