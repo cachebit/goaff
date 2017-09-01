@@ -29,12 +29,36 @@ class TopicsController extends Controller implements CreatorListener
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth', ['except' => ['index', 'show', 'latestTopics', 'freeTopics']]);
     }
 
     public function index(Request $request, Topic $topic)
     {
         $topics = $topic->getTopicsWithFilter($request->get('filter', 'index'), 40);
+        $links  = Link::allFromCache();
+        $banners = Banner::allByPosition();
+
+        $active_users = ActiveUser::fetchAll();
+        $hot_topics = HotTopic::fetchAll();
+
+        return view('topics.index', compact('topics', 'links', 'banners', 'active_users', 'hot_topics'));
+    }
+
+    public function latestTopics(Request $request, Topic $topic)
+    {
+        $topics = $topic->getTopicsWithFilter($request->get('filter', 'monthly'), 10);
+        $links  = Link::allFromCache();
+        $banners = Banner::allByPosition();
+
+        $active_users = ActiveUser::fetchAll();
+        $hot_topics = HotTopic::fetchAll();
+
+        return view('topics.index', compact('topics', 'links', 'banners', 'active_users', 'hot_topics'));
+    }
+
+    public function freeTopics(Request $request, Topic $topic)
+    {
+        $topics = $topic->getTopicsWithFilter($request->get('filter', 'free'), 10);
         $links  = Link::allFromCache();
         $banners = Banner::allByPosition();
 

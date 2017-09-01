@@ -99,6 +99,8 @@ Route::delete('replies/delete/{id}', 'RepliesController@destroy')->name('replies
 
 # ------------------ Topic ------------------------
 Route::get('/topics', 'TopicsController@index')->name('topics.index');
+Route::get('/latest', 'TopicsController@latestTopics')->name('topics.latest_topics');
+Route::get('/free', 'TopicsController@freeTopics')->name('topics.free_topics');
 Route::get('/topics/create', 'TopicsController@create')->name('topics.create')->middleware('verified_email');
 Route::post('/topics', 'TopicsController@store')->name('topics.store')->middleware('verified_email');
 Route::get('/topics/{id}/edit', 'TopicsController@edit')->name('topics.edit');
