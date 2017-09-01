@@ -46,7 +46,7 @@ class TopicsController extends Controller implements CreatorListener
 
     public function latestTopics(Request $request, Topic $topic)
     {
-        $topics = $topic->getTopicsWithFilter($request->get('filter', 'monthly'), 10);
+        $topics = $topic->getTopicsWithFilter($request->get('filter', 'monthly'), 40);
         $links  = Link::allFromCache();
         $banners = Banner::allByPosition();
 
@@ -58,7 +58,7 @@ class TopicsController extends Controller implements CreatorListener
 
     public function freeTopics(Request $request, Topic $topic)
     {
-        $topics = $topic->getTopicsWithFilter($request->get('filter', 'free'), 10);
+        $topics = $topic->getTopicsWithFilter($request->get('filter', 'free'), 40);
         $links  = Link::allFromCache();
         $banners = Banner::allByPosition();
 
