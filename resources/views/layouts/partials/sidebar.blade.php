@@ -133,10 +133,20 @@
   <div class="panel-body text-center sidebar-sponsor-box">
       @if(isset($banners['sidebar-sponsor']))
           @foreach($banners['sidebar-sponsor'] as $banner)
-              <a class="sidebar-sponsor-link" href="{{ $banner->link }}" target="_blank">
-                  <img src="{{ $banner->image_url }}" class="popover-with-html" data-content="{{ $banner->title }}" width="100%">
-              </a>
-              <hr>
+            @if($banner->id == 21)
+                @if(auth()->check() && auth()->user()->may('annually_accessable'))
+                <a class="sidebar-sponsor-link" href="{{ $banner->link }}" target="_blank">
+                    <img src="{{ $banner->image_url }}" class="popover-with-html" data-content="{{ $banner->title }}" width="100%">
+                </a>
+                <hr>
+                @endif
+            @else
+            <a class="sidebar-sponsor-link" href="{{ $banner->link }}" target="_blank">
+                <img src="{{ $banner->image_url }}" class="popover-with-html" data-content="{{ $banner->title }}" width="100%">
+            </a>
+            <hr>
+            @endif
+
           @endforeach
       @endif
 </div>
