@@ -48,7 +48,7 @@ trait TopicFilterable
                 return $query->pinned()->orderBy('vote_count', 'desc')->recent();
                 break;
             case 'monthly':
-                return $query->whereNotIn('id', [14, 15])->where('created_at','>=', \Carbon\Carbon::now()->subMonth())->recent();
+                return $query->whereNotIn('category_id', [14, 15])->where('created_at','>=', \Carbon\Carbon::now()->subMonth())->recent();
                 break;
             case 'free':
                 return $query->where('isPublic', true)->recent();
