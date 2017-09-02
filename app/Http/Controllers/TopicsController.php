@@ -29,7 +29,7 @@ class TopicsController extends Controller implements CreatorListener
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show', 'latestTopics', 'freeTopics']]);
+        $this->middleware('auth', ['except' => ['index', 'show', 'latestTopics', 'freeTopics', 'allTopics']]);
     }
 
     public function index(Request $request, Topic $topic)
@@ -56,6 +56,18 @@ class TopicsController extends Controller implements CreatorListener
         return view('topics.index', compact('topics', 'links', 'banners', 'active_users', 'hot_topics'));
     }
 
+    public function allTopics(Request $request, Topic $topic)
+    {
+        $topics = $topic->getTopicsWithFilter($request->get('filter', 'all'), 40);
+        $links  = Link::allFromCache();
+        $banners = Banner::allByPosition();
+
+        $active_users = ActiveUser::fetchAll();
+        $hot_topics = HotTopic::fetchAll();
+
+        return view('topics.index', compact('topics', 'links', 'banners', 'active_users', 'hot_topics'));
+    }
+
     public function freeTopics(Request $request, Topic $topic)
     {
         $topics = $topic->getTopicsWithFilter($request->get('filter', 'free'), 40);
@@ -71,7 +83,7 @@ class TopicsController extends Controller implements CreatorListener
     public function isPublicManager()
     {
         if(auth()->check() && auth()->id() == 1){
-          $topics = Topic::latest()->paginate(100);
+          $topics = Topic::latest()->paginate(50);
           return view('topics.is_public_manager', compact('topics'));
         }else{
           return redirect('/topics');

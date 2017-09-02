@@ -26,7 +26,7 @@ trait TopicFilterable
 
     public function getTopicFilter($request_filter)
     {
-        $filters = ['monthly', 'free', 'noreply', 'vote', 'excellent','recent', 'wiki', 'jobs', 'excellent-pinned', 'index'];
+        $filters = ['monthly', 'free', 'noreply', 'vote', 'excellent','recent', 'wiki', 'jobs', 'excellent-pinned', 'index','all'];
         if (in_array($request_filter, $filters)) {
             return $request_filter;
         }
@@ -49,6 +49,9 @@ trait TopicFilterable
                 break;
             case 'monthly':
                 return $query->whereNotIn('category_id', [14, 15])->where('created_at','>=', \Carbon\Carbon::now()->subMonth())->recent();
+                break;
+            case 'all':
+                return $query->whereNotIn('category_id', [14, 15])->recent();
                 break;
             case 'free':
                 return $query->where('isPublic', true)->recent();

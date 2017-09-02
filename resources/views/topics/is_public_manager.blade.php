@@ -42,6 +42,7 @@
           @endforeach
         </tbody>
       </table>
+      {!! $topics->render() !!}
     </div>
 
   </body>

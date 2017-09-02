@@ -42,6 +42,9 @@ $factory->define(Topic::class, function (Faker\Generator $faker) {
     return [
         'title'      => $faker->sentence(),
         'body'       => $faker->text(),
+        'user_id' => 1,
+        'category_id' => 10,
+        'isPublic' => 1,
         'created_at' => Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon::now()->toDateTimeString(),
     ];

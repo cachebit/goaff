@@ -34,24 +34,8 @@
               <a href="/">首页</a>
           </li>
 
-          <li class="{{ (Request::is('topics') && ! Request::is('categories*') ? ' active' : '') }}">
-              <a href="{{ route('topics.index') }}">所有</a>
-          </li>
-
-
-
-          <li role="presentation" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-              讨论区<span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="{{ (Request::is('categories/'.config('phphub.discussion_category_id')) || (isset($topic) && $topic->category_id == config('phphub.discussion_category_id'))) ? ' active' : '' }}">
-                  <a href="{{ route('categories.show', config('phphub.discussion_category_id')) }}">综合讨论</a>
-              </li>
-              <li class="{{ (Request::is('categories/'.config('phphub.winning_category_id')) || (isset($topic) && $topic->category_id == config('phphub.winning_category_id'))) ? ' active' : '' }}">
-                  <a href="{{ route('categories.show', config('phphub.winning_category_id')) }}">成长之路</a>
-              </li>
-            </ul>
+          <li class="{{ (Request::is('all') ? ' active' : '') }}">
+              <a href="{{ route('topics.all_topics') }}">所有</a>
           </li>
 
           <li class="{{ (Request::is('latest')) ? ' active' : '' }}">
@@ -91,10 +75,6 @@
             </ul>
           </li>
 
-          <li class="{{ (Request::is('categories/'.config('phphub.tutorial_category_id')) || (isset($topic) && $topic->category_id == config('phphub.tutorial_category_id'))) ? ' active' : '' }}">
-              <a href="{{ route('categories.show', config('phphub.tutorial_category_id')) }}">付费培训</a>
-          </li>
-
           <li role="presentation" class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
               联盟/流量/追踪<span class="caret"></span>
@@ -112,6 +92,26 @@
                 <li class="{{ (Request::is('categories/'.config('phphub.tools_category_id')) || (isset($topic) && $topic->category_id == config('phphub.tools_category_id'))) ? ' active' : '' }}">
                     <a href="{{ route('categories.show', config('phphub.tools_category_id')) }}">其他工具介绍和使用</a>
                 </li>
+            </ul>
+          </li>
+
+          <li class="{{ (Request::is('categories/'.config('phphub.tutorial_category_id')) || (isset($topic) && $topic->category_id == config('phphub.tutorial_category_id'))) ? ' active' : '' }}">
+              <a href="{{ route('categories.show', config('phphub.tutorial_category_id')) }}">付费培训</a>
+          </li>
+
+
+
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              讨论区<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="{{ (Request::is('categories/'.config('phphub.discussion_category_id')) || (isset($topic) && $topic->category_id == config('phphub.discussion_category_id'))) ? ' active' : '' }}">
+                  <a href="{{ route('categories.show', config('phphub.discussion_category_id')) }}">综合讨论</a>
+              </li>
+              <li class="{{ (Request::is('categories/'.config('phphub.winning_category_id')) || (isset($topic) && $topic->category_id == config('phphub.winning_category_id'))) ? ' active' : '' }}">
+                  <a href="{{ route('categories.show', config('phphub.winning_category_id')) }}">成长之路</a>
+              </li>
             </ul>
           </li>
 
