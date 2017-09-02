@@ -34,8 +34,8 @@
               <a href="/">首页</a>
           </li>
 
-          <li class="{{ (Request::is('all') ? ' active' : '') }}">
-              <a href="{{ route('topics.all_topics') }}">所有</a>
+          <li class="{{ (Request::is('topics') && ! Request::is('categories*') ? ' active' : '') }}">
+              <a href="{{ route('topics.index') }}">所有</a>
           </li>
 
           <li class="{{ (Request::is('latest')) ? ' active' : '' }}">
