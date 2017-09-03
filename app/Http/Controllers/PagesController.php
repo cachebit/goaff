@@ -26,7 +26,7 @@ class PagesController extends Controller
             return app(ActivityController::class)->index($request);
         } else {
             $topics = $topic->getTopicsWithFilter('free');
-            
+
             $banners = Banner::allByPosition();
             return view('pages.home', compact('topics', 'banners'));
         }
@@ -108,5 +108,38 @@ class PagesController extends Controller
     {
         $users = User::byRolesName('HallOfFame');
         return view('pages.hall_of_fame', compact('users'));
+    }
+
+    public function utc()
+    {
+        $time = 14;
+        $utcs = [
+          ['utc'=>'+8', 'timezone'=>'Asia/Shanghai', 'data'=> $time <= 16? $time+8 : $time+8-24],
+          ['utc'=>'+9', 'timezone'=>'Asia/Seoul', 'data'=> $time <= 15? $time+9 : $time+9-24],
+          ['utc'=>'+10', 'timezone'=>'Australia/Brisbane', 'data'=> $time <= 14? $time+10 : $time+10-24],
+          ['utc'=>'+11', 'timezone'=>'Austrailia/Melbourne', 'data'=> $time <= 13? $time+11 : $time+11-24],
+          ['utc'=>'+12', 'timezone'=>'Pacific/Tarawa', 'data'=> $time <= 12? $time+12 : $time+12-24],
+          ['utc'=>'-11', 'timezone'=>'Pacific/Niue', 'data'=> $time <= 11? $time-11+24 : $time-11],
+          ['utc'=>'-10', 'timezone'=>'Pacific/Honolulu', 'data'=> $time <= 10? $time-10+24 : $time-10],
+          ['utc'=>'-9', 'timezone'=>'America/Anchorage', 'data'=> $time <= 9? $time-9+24 : $time-9],
+          ['utc'=>'-8', 'timezone'=>'America/Los Angeles', 'data'=> $time <= 8? $time-8+24 : $time-8],
+          ['utc'=>'-7', 'timezone'=>'America/Phoneix', 'data'=> $time <= 7? $time-7+24 : $time-7],
+          ['utc'=>'-6', 'timezone'=>'America/Chicago', 'data'=> $time <= 6? $time-6+24 : $time-6],
+          ['utc'=>'-5', 'timezone'=>'America/New York', 'data'=> $time <= 5? $time-5+24 : $time-5],
+          ['utc'=>'-4', 'timezone'=>'America/Argentina/San Juan', 'data'=> $time <= 4? $time-4+24 : $time-4],
+          ['utc'=>'-3', 'timezone'=>'America/Argentina/Buenos Aires', 'data'=> $time <= 3? $time-3+24 : $time-3],
+          ['utc'=>'-2', 'timezone'=>'Atlantic/South Georgia', 'data'=> $time <= 2? $time-2+24 : $time-2],
+          ['utc'=>'-1', 'timezone'=>'Atlantic/Azores', 'data'=> $time <= 1? $time-1+24 : $time-1],
+          ['utc'=>'0', 'timezone'=>'Europe/London', 'data'=> $time],
+          ['utc'=>'+1', 'timezone'=>'Europe/Berlin', 'data'=> $time <= 23? $time+1 : $time+23-24],
+          ['utc'=>'+2', 'timezone'=>'Europe/Athens', 'data'=> $time <= 22? $time+2 : $time+2-24],
+          ['utc'=>'+3', 'timezone'=>'Europe/Istanbul', 'data'=> $time <= 21? $time+3 : $time+3-24],
+          ['utc'=>'+4', 'timezone'=>'Asia/Baku', 'data'=> $time <= 20? $time+4 : $time+4-24],
+          ['utc'=>'+5', 'timezone'=>'Asia/Karachi', 'data'=> $time <= 19? $time+5 : $time+5-24],
+          ['utc'=>'+6', 'timezone'=>'Asia/Omsk', 'data'=> $time <= 18? $time+6 : $time+6-24],
+          ['utc'=>'+7', 'timezone'=>'Asia/Ho Chi Minh', 'data'=> $time <= 17? $time+7 : $time+7-24],
+        ];
+
+        return view('pages.utc', compact('utcs'));
     }
 }
