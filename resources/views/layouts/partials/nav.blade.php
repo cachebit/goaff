@@ -1,6 +1,9 @@
 <div class="container">
     <div class="row" style="margin-top:10px">
       <div class="col-md-12 text-right">
+          @if(!auth()->check() || (auth()->check() && auth()->id() ==1 ))
+          <a class="btn btn-xs btn-primary" href="http://www.affren.com/topics/78/hang-ye-li-100-mei-jin-hai-neng-zuo-shi-mo" target="_blank">加入会员</a>
+          @endif
           <a class="btn btn-xs btn-default" href="/categories/6" target="_blank">公告</a>
           <a class="btn btn-xs btn-default" href="/topics/1/guo-jia-he-di-qu-suo-xie-dai-ma-he-shi-cha" target="_blank">国家缩写</a>
           <a class="btn btn-xs btn-default" href="/utc" target="_blank">Afflow 时区工具</a>
