@@ -112,7 +112,7 @@ class PagesController extends Controller
 
     public function utc()
     {
-        $time = 14;
+        $time = \Carbon\Carbon::now('Europe/London');
         $utcs = [
           ['utc'=>'+8', 'timezone'=>'Asia/Shanghai', 'data'=> $time <= 16? $time+8 : $time+8-24],
           ['utc'=>'+9', 'timezone'=>'Asia/Seoul', 'data'=> $time <= 15? $time+9 : $time+9-24],
