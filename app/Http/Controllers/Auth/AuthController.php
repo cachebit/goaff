@@ -45,6 +45,72 @@ class AuthController extends Controller implements UserCreatorListener
         return $this->userFound($user);
     }
 
+    public function login(Request $request)
+    {
+        $this->validate($request, [
+            $this->loginUsername() => 'required', 'password' => 'required',
+        ]);
+
+        // If the class is using the ThrottlesLogins trait, we can automatically throttle
+        // the login attempts for this application. We'll key this by the username and
+        // the IP address of the client making these requests into this application.
+        $throttles = $this->isUsingThrottlesLoginsTrait();
+
+        if ($throttles && $this->hasTooManyLoginAttempts($request)) {
+            return $this->sendLockoutResponse($request);
+        }
+
+        $credentials = $this->getCredentials($request);
+
+        if (Auth::attempt($credentials, $request->has('remember'))) {
+            return $this->thishandleUserWasAuthenticated($request, $throttles);
+        }
+
+        // If the login attempt was unsuccessful we will increment the number of attempts
+        // to login and redirect the user back to the login form. Of course, when this
+        // user surpasses their maximum number of attempts they will get locked out.
+        if ($throttles) {
+            $this->incrementLoginAttempts($request);
+        }
+
+        return redirect($this->loginPath())
+            ->withInput($request->only($this->loginUsername(), 'remember'))
+            ->withErrors([
+                $this->loginUsername() => $this->getFailedLoginMessage(),
+            ]);
+
+
+    }
+
+    protected function thishandleUserWasAuthenticated(Request $request, $throttles)
+    {
+        if ($throttles) {
+            $this->clearLoginAttempts($request);
+        }
+
+        if (method_exists($this, 'authenticated')) {
+            return $this->authenticated($request, Auth::user());
+        }
+
+        $result = Auth::user();
+
+        if ($result) {
+           # 登录成功
+           // 制作 token
+           $time = \Carbon\Carbon::now();
+           // md5 加密
+           $singleToken = md5($request->getClientIp() . $result->id . $time);
+           // 当前 time 存入 Redis
+           \Redis::set('STRING_SINGLETOKEN_' . $result->id, $time);
+           // 用户信息存入 Session
+           $request->session()->put('user_login', $result->id);
+           // 跳转到首页, 并附带 Cookie
+           return redirect()->intended($this->redirectPath())->withCookie('SINGLETOKEN', $singleToken);
+       }else{
+           return redirect()->route('auth.login');
+       }
+    }
+
     public function logout()
     {
         Auth::logout();

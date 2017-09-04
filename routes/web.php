@@ -72,7 +72,7 @@ Route::post('/users', 'MembershipsController@store')->name('users.store');
 
 Route::get('/login', 'Auth\AuthController@oauth')->name('login');
 Route::get('/auth/login', 'Auth\AuthController@signin')->name('auth.login');
-Route::post('/auth/login', 'Auth\AuthController@postLogin')->name('auth.login');
+Route::post('/auth/login', 'Auth\AuthController@login')->name('auth.login');
 Route::get('/login-required', 'Auth\AuthController@loginRequired')->name('login-required');
 Route::get('/admin-required', 'Auth\AuthController@adminRequired')->name('admin-required');
 Route::get('/user-banned', 'Auth\AuthController@userBanned')->name('user-banned');
@@ -99,16 +99,31 @@ Route::post('/replies', 'RepliesController@store')->name('replies.store')->middl
 Route::delete('replies/delete/{id}', 'RepliesController@destroy')->name('replies.destroy')->middleware('auth');
 
 # ------------------ Topic ------------------------
+
+Route::group(['middleware' => 'SsoMiddleware'], function() {
+  // Article
+  Route::get("/articles/create", "ArticlesController@create")->name('articles.create')->middleware('verified_email');
+  Route::patch("/topics/{id}/transform", "ArticlesController@transform")->name('articles.transform');
+  Route::post("/articles", "ArticlesController@store")->name('articles.store')->middleware('verified_email');
+  Route::get("/articles/{id}/edit", "ArticlesController@edit")->name('articles.edit');
+
+  Route::get('/topics/{id}/{slug?}', 'TopicsController@show')->name('topics.show');
+  Route::get('/articles/{id}/{slug?}', "TopicsController@show")->name('articles.show');
+
+  Route::get('/topics/create', 'TopicsController@create')->name('topics.create')->middleware('verified_email');
+  Route::post('/topics', 'TopicsController@store')->name('topics.store')->middleware('verified_email');
+  Route::get('/topics/{id}/edit', 'TopicsController@edit')->name('topics.edit');
+  Route::patch('/topics/{id}', 'TopicsController@update')->name('topics.update');
+  Route::delete('/topics/{id}', 'TopicsController@destroy')->name('topics.destroy');
+  Route::post('/topics/{id}/append', 'TopicsController@append')->name('topics.append');
+
+});
+
 Route::get('/topics', 'TopicsController@index')->name('topics.index');
 Route::get('/latest', 'TopicsController@latestTopics')->name('topics.latest_topics');
 Route::get('/free', 'TopicsController@freeTopics')->name('topics.free_topics');
 Route::get('/all', 'TopicsController@allTopics')->name('topics.all_topics');
-Route::get('/topics/create', 'TopicsController@create')->name('topics.create')->middleware('verified_email');
-Route::post('/topics', 'TopicsController@store')->name('topics.store')->middleware('verified_email');
-Route::get('/topics/{id}/edit', 'TopicsController@edit')->name('topics.edit');
-Route::patch('/topics/{id}', 'TopicsController@update')->name('topics.update');
-Route::delete('/topics/{id}', 'TopicsController@destroy')->name('topics.destroy');
-Route::post('/topics/{id}/append', 'TopicsController@append')->name('topics.append');
+
 
 Route::get('/topics/ispublic', 'TopicsController@isPublicManager');
 Route::patch('/topics/{topic}/ispublic', 'TopicsController@togglePublic')->name('topics.togglePublic');
@@ -158,14 +173,6 @@ Route::patch('/blogs/{id}', 'BlogsController@update')->name('blogs.update');
 Route::post('/blogs/{blog}/subscribe', 'BlogsController@subscribe')->name('blogs.subscribe');
 Route::post('/blogs/{blog}/unsubscribe', 'BlogsController@unsubscribe')->name('blogs.unsubscribe');
 
-// Article
-Route::get("/articles/create", "ArticlesController@create")->name('articles.create')->middleware('verified_email');
-Route::patch("/topics/{id}/transform", "ArticlesController@transform")->name('articles.transform');
-Route::post("/articles", "ArticlesController@store")->name('articles.store')->middleware('verified_email');
-Route::get("/articles/{id}/edit", "ArticlesController@edit")->name('articles.edit');
-
-Route::get('/topics/{id}/{slug?}', 'TopicsController@show')->name('topics.show');
-Route::get('/articles/{id}/{slug?}', "TopicsController@show")->name('articles.show');
 
 
 
