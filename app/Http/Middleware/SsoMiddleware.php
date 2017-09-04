@@ -16,8 +16,7 @@ class SsoMiddleware
      */
     public function handle($request, Closure $next)
     {
-      dd($request->session());
-        if(auth()->check()){
+      if(auth()->check()){
           $userId = $request->session()->get('user_login');
 
           if ($userId) {
