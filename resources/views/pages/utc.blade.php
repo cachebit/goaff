@@ -54,6 +54,7 @@ Afflow/Monetizer 最新N小时数据 | @parent
             </div>
             <div class="bg-warning">
               <p class="text-danger">注：测试中，欢迎提意见和提交bug，联系QQ：3362259409。Afflow存在一定的数据延时，大概2-3小时，所以最近N小时也是约数，误差推测在上下半小时。</p>
+              <p>用法在底部。</p>
             </div>
             <table class="table table-striped table-hover">
               <thead>
@@ -71,6 +72,8 @@ Afflow/Monetizer 最新N小时数据 | @parent
                 @endforeach
               </tbody>
             </table>
+
+            <img src="/assets/images/afflow-timezone-method.png"  class="popover-with-html" data-content="afflow 改 timezone" width="100%">
           </div>
         </div>
     </div>
