@@ -16,6 +16,7 @@ class SsoMiddleware
      */
     public function handle($request, Closure $next)
     {
+      dd($request->session());
         if(auth()->check()){
           $userId = $request->session()->get('user_login');
 
@@ -32,7 +33,9 @@ class SsoMiddleware
                       // 记录此次异常登录记录
                       \DB::table('data_login_exception')->insert(['uid' => $userId, 'ip' => $ip, 'addtime' => time()]);
                       // 清除 session 数据
-                      \Session::forget('indexlogin');
+
+                      $request->session()->forget('user_login');
+                      \Auth::logout();
 
                       Flash::warning('您的帐号在另一个地点登录..');
                       return redirect()->route('auth.login');
