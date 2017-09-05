@@ -36,8 +36,8 @@ class SsoMiddleware
                       $request->session()->forget('user_login');
                       \Auth::logout();
 
-                      Flash::warning('您的帐号在另一个地点登录...未登录用户可以查看公开文章。');
-                      return redirect()->route('topics.free_topics');
+                      Flash::warning('您的帐号在另一个地点登录...');
+                      return redirect()->route('auth.login');
                   }
                   return $next($request);
               }
