@@ -101,23 +101,24 @@ Route::delete('replies/delete/{id}', 'RepliesController@destroy')->name('replies
 # ------------------ Topic ------------------------
 
 Route::group(['middleware' => 'SsoMiddleware'], function() {
-  // Article
-  Route::get("/articles/create", "ArticlesController@create")->name('articles.create')->middleware('verified_email');
-  Route::patch("/topics/{id}/transform", "ArticlesController@transform")->name('articles.transform');
-  Route::post("/articles", "ArticlesController@store")->name('articles.store')->middleware('verified_email');
-  Route::get("/articles/{id}/edit", "ArticlesController@edit")->name('articles.edit');
 
   Route::get('/topics/{id}/{slug?}', 'TopicsController@show')->name('topics.show');
   Route::get('/articles/{id}/{slug?}', "TopicsController@show")->name('articles.show');
 
-  Route::get('/topics/create', 'TopicsController@create')->name('topics.create')->middleware('verified_email');
-  Route::post('/topics', 'TopicsController@store')->name('topics.store')->middleware('verified_email');
-  Route::get('/topics/{id}/edit', 'TopicsController@edit')->name('topics.edit');
-  Route::patch('/topics/{id}', 'TopicsController@update')->name('topics.update');
-  Route::delete('/topics/{id}', 'TopicsController@destroy')->name('topics.destroy');
-  Route::post('/topics/{id}/append', 'TopicsController@append')->name('topics.append');
-
 });
+
+// Article
+Route::get("/articles/create", "ArticlesController@create")->name('articles.create')->middleware('verified_email');
+Route::patch("/topics/{id}/transform", "ArticlesController@transform")->name('articles.transform');
+Route::post("/articles", "ArticlesController@store")->name('articles.store')->middleware('verified_email');
+Route::get("/articles/{id}/edit", "ArticlesController@edit")->name('articles.edit');
+
+Route::get('/topics/create', 'TopicsController@create')->name('topics.create')->middleware('verified_email');
+Route::post('/topics', 'TopicsController@store')->name('topics.store')->middleware('verified_email');
+Route::get('/topics/{id}/edit', 'TopicsController@edit')->name('topics.edit');
+Route::patch('/topics/{id}', 'TopicsController@update')->name('topics.update');
+Route::delete('/topics/{id}', 'TopicsController@destroy')->name('topics.destroy');
+Route::post('/topics/{id}/append', 'TopicsController@append')->name('topics.append');
 
 Route::get('/topics', 'TopicsController@index')->name('topics.index');
 Route::get('/latest', 'TopicsController@latestTopics')->name('topics.latest_topics');
