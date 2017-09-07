@@ -18,8 +18,8 @@
         </div>
 
         <div class="col-md-6">
-          <a href="/topics/78/hang-ye-li-100-mei-jin-hai-neng-zuo-shi-mo#">
-            <img class="img-responsive pull-right" src="/assets/images/gif-banner.gif" alt="affren-banner-ad">
+          <a href="http://www.affren.com/topics/259/9-yue-hui-yuan-tuan-gou-huo-dong">
+            <img class="img-responsive pull-right" src="/assets/images/ad-groupon.png" alt="affren-banner-ad">
           </a>
         </div>
     </div>
