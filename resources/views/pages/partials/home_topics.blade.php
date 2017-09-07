@@ -6,11 +6,11 @@
     @foreach ($topics as $topic)
         <div class="media">
           <div class="media-body">
-            <h2 class="media-heading">
+            <h3 class="media-heading">
               <a href="{{ $topic->link() }}" title="{{ $topic->title }}">
                   {{{ $topic->title }}}
               </a>
-            </h2>
+            </h3>
 
             <div class="row">
               <div class="col-xs-6">
@@ -31,7 +31,12 @@
               </div>
             </div>
 
-            <p style="margin-top:10px;color:#888;">{{ $topic->excerpt }}</p>
+            <p style="margin-top:10px;color:#888;">
+              {{ $topic->excerpt }}
+              <a class="btn btn-danger btn-xs pull-right" href="{{ $topic->link() }}" title="{{ $topic->title }}">
+                  点击阅读
+              </a>
+            </p>
 
           </div>
         </div>
