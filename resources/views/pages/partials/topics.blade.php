@@ -4,7 +4,7 @@
 
 <ul class="list-group row topic-list">
     @foreach ($topics as $topic)
-        <li class="list-group-item media col-md-6" style="margin-top: 0px;">
+        <li class="list-group-item media" style="margin-top: 0px;">
 
              <a class="reply_last_time hidden-xs meta" href="{{ $topic->link() }}">
                  {{ $topic->vote_count }} {{ lang('Up Votes') }}
