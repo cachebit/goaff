@@ -18,8 +18,8 @@
         </div>
 
         <div class="col-md-6">
-          <a href="http://www.affren.com/topics/259/9-yue-hui-yuan-tuan-gou-huo-dong">
-            <img class="img-responsive pull-right" src="/assets/images/ad-groupon.png" alt="affren-banner-ad">
+          <a href="http://t.affren.com/">
+            <img class="img-responsive pull-right" src="/assets/images/6wamc_affren_com_ad.gif" alt="affren-banner-ad">
           </a>
         </div>
     </div>
