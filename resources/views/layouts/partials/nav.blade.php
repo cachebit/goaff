@@ -105,10 +105,11 @@
             </ul>
           </li>
 
-          <li class="{{ (Request::is('categories/'.config('phphub.tutorial_category_id')) || (isset($topic) && $topic->category_id == config('phphub.tutorial_category_id'))) ? ' active' : '' }}">
+          <!-- <li class="{{ (Request::is('categories/'.config('phphub.tutorial_category_id')) || (isset($topic) && $topic->category_id == config('phphub.tutorial_category_id'))) ? ' active' : '' }}">
               <a href="{{ route('categories.show', config('phphub.tutorial_category_id')) }}">付费培训</a>
-          </li>
+          </li> -->
 
+          <li><a href="http://t.affren.com/" target="_blank">付费培训</a></li>
 
 
           <li role="presentation" class="dropdown">
