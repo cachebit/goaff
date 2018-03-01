@@ -19,7 +19,7 @@
 
         <div class="col-md-6">
           <a href="http://t.affren.com/">
-            <img class="img-responsive pull-right" src="/assets/images/spring_banner.gif" alt="affren-banner-ad">
+            <img class="img-responsive pull-right" src="/assets/images/banner2018.jpg" alt="affren-banner-ad">
           </a>
         </div>
     </div>
