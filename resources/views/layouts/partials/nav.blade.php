@@ -7,6 +7,7 @@
           <a class="btn btn-xs btn-default" href="/categories/6" target="_blank">公告</a>
           <a class="btn btn-xs btn-default" href="/topics/1/guo-jia-he-di-qu-suo-xie-dai-ma-he-shi-cha" target="_blank">国家缩写</a>
           <a class="btn btn-xs btn-default" href="/utc" target="_blank">Afflow 时区工具</a>
+	  <a class="btn btn-xs btn-primary" href="http://www.affren.com/topics/344/voluum" target="_blank">《Voluum 用户指南》</a>
       </div>
     </div>
     <div class="row">
