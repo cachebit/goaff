@@ -73,7 +73,7 @@
         <p>
           <a href="http://www.affren.com/topics/120/cui-huang-huang-wan-quan-shi-zhan-dian-zi-shu-xiao-mi-quan-da-yi-zhu-ni-zou-shang-da-shen-zhi-lu">完全实战电子书</a>
            +
-           S<a href="http://www.affren.com/topics/234/tong-guo-afflow-tao-li-zhuan-qian-xi-lie-mu-lu">STM 超详细实战教程</a>
+           <a href="http://www.affren.com/topics/234/tong-guo-afflow-tao-li-zhuan-qian-xi-lie-mu-lu">STM 超详细实战教程</a>
            ,快速盈利不是梦！</p>
       </div>
       <div class="panel-footer">
@@ -84,8 +84,8 @@
           <li><a href="http://www.affren.com/topics/21/stm-lun-tan-gong-kai-ke-1-xin-ren-ru-xing-de-4-bu-ji-hua">STM 公开课推荐新手教程</a></li>
         </ul>
         <h4>还不够？</h4>
-        <p>大神培训等着你！日入百刀（利润）毕业!</p>
-        <a class="btn btn-success btn-block" href="http://www.affren.com/topics/72/affiliate-marketing-he-media-buy-pei-xun">查看详情</a>
+        <p>《Affiliate Marketing 完美中文版视频教程》，30天课程挑战赚美金！</p>
+        <a class="btn btn-success btn-block" href="http://t.affren.com/">查看详情</a>
       </div>
     </div>
   </div>
