@@ -6,6 +6,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-push-3">
+    <a href="http://www.fatcatyan.top/luyouqi/" rel="nofollow" target="_blank"><img class="img-responsive" src="/assets/images/ad.jpg"/></a><br>	
     <div class="panel panel-default list-panel home-topic-list">
       <div class="panel-heading">
         <h3 class="panel-title text-center">
