@@ -10,6 +10,7 @@
               <span style="font-size:0.9em;color: #fff;">
                   Powered by <a href="https://github.com/summerblue/phphub5" style="color: #fff;" target="_blank" rel="external nofollow">PHPHub</a>
               </span>
+	<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
           </div>
 
           <div class="col-sm-6 col-lg-6 col-lg-offset-1">

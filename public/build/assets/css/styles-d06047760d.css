@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 .editor-preview-active-side, .editor-preview, .markdown-body, .markdown-reply {
   font-size: 15px;
   -ms-text-size-adjust: 100%;
@@ -12273,7 +12273,7 @@ a {
   .footer {
     position: absolute;
     bottom: 0;
-    height: 206px; }
+    height: 306px; }
   #wrap {
     min-height: 100%;
     position: relative; } }
