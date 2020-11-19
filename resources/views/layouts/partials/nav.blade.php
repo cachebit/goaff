@@ -7,7 +7,7 @@
           <a class="btn btn-xs btn-default" href="/categories/6" target="_blank">公告</a>
           <a class="btn btn-xs btn-default" href="/topics/1/guo-jia-he-di-qu-suo-xie-dai-ma-he-shi-cha" target="_blank">国家缩写</a>
           <a class="btn btn-xs btn-default" href="/utc" target="_blank">Afflow 时区工具</a>
-	  <a class="btn btn-xs btn-primary" href="http://www.affren.com/topics/344/voluum" target="_blank">《Voluum 用户指南》</a>
+	  <a class="btn btn-xs btn-primary" href="https://www.affren.com/topics/344/voluum" target="_blank">《Voluum 用户指南》</a>
       </div>
     </div>
     <div class="row">
@@ -19,7 +19,7 @@
         </div>
 
         <div class="col-md-6">
-          <a href="http://t.affren.com/">
+          <a href="https://t.affren.com/">
             <img class="img-responsive pull-right" src="/assets/images/banner2018.jpg" alt="affren-banner-ad">
           </a>
         </div>
@@ -110,7 +110,7 @@
               <a href="{{ route('categories.show', config('phphub.tutorial_category_id')) }}">付费培训</a>
           </li> -->
 
-          <li><a href="http://t.affren.com/" target="_blank">付费培训</a></li>
+          <li><a href="https://t.affren.com/" target="_blank">付费培训</a></li>
 
 
           <li role="presentation" class="dropdown">

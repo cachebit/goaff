@@ -174,9 +174,12 @@ Route::patch('/blogs/{id}', 'BlogsController@update')->name('blogs.update');
 Route::post('/blogs/{blog}/subscribe', 'BlogsController@subscribe')->name('blogs.subscribe');
 Route::post('/blogs/{blog}/unsubscribe', 'BlogsController@unsubscribe')->name('blogs.unsubscribe');
 
+#----------------------referrals---------------
+Route::get('/go/afilter',function(){
+    return redirect('https://aff.cool/afilter_affren', 301);
+});
 
-
-
+#----------------------referrals---------------
 
 Route::get('/tutorial',function(){
     return redirect('/categories/16', 301);

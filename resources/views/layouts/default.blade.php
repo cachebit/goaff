@@ -121,6 +121,7 @@
 				  s.parentNode.insertBefore(hm, s);
 				})();
 				</script>
+<a href="http://webscan.360.cn/index/checkwebsite/url/www.affren.com"><img border="0" src="http://webscan.360.cn/status/pai/hash/04bf61fafc641e592e4622e3cdc07ba7"/></a>
 
 	</body>
 </html>
