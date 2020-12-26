@@ -1,4 +1,5 @@
 /vendor
+/public/phpmyadmin
 /node_modules
 Homestead.yaml
 Homestead.json

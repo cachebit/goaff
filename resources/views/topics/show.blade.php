@@ -19,11 +19,6 @@
 @section('content')
 
 <div class="col-md-9 topics-show main-col">
-<<<<<<< HEAD
-
-=======
-  <a href="http://www.fatcatyan.top/luyouqi/" rel="nofollow" target="_blank"><img class="img-responsive" src="/assets/images/ad.jpg"/></a><br>
->>>>>>> 8bfd76326b75a814451d41ec18c81b1191901a3e
   <!-- Topic Detial -->
   <div class="topic panel panel-default">
     <div class="infos panel-heading">
