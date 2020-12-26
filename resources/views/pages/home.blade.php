@@ -6,6 +6,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-push-3">
+    <a href="http://www.fatcatyan.top/luyouqi/" rel="nofollow" target="_blank"><img class="img-responsive" src="/assets/images/ad.jpg"/></a><br>	
     <div class="panel panel-default list-panel home-topic-list">
       <div class="panel-heading">
         <h3 class="panel-title text-center">
@@ -73,7 +74,11 @@
         <p>
           <a href="https://www.affren.com/topics/120/cui-huang-huang-wan-quan-shi-zhan-dian-zi-shu-xiao-mi-quan-da-yi-zhu-ni-zou-shang-da-shen-zhi-lu">完全实战电子书</a>
            +
+<<<<<<< HEAD
            <a href="https://www.affren.com/topics/234/tong-guo-afflow-tao-li-zhuan-qian-xi-lie-mu-lu">STM 超详细实战教程</a>
+=======
+           <a href="http://www.affren.com/topics/234/tong-guo-afflow-tao-li-zhuan-qian-xi-lie-mu-lu">STM 超详细实战教程</a>
+>>>>>>> 8bfd76326b75a814451d41ec18c81b1191901a3e
            ,快速盈利不是梦！</p>
       </div>
       <div class="panel-footer">
@@ -84,8 +89,13 @@
           <li><a href="https://www.affren.com/topics/21/stm-lun-tan-gong-kai-ke-1-xin-ren-ru-xing-de-4-bu-ji-hua">STM 公开课推荐新手教程</a></li>
         </ul>
         <h4>还不够？</h4>
+<<<<<<< HEAD
         <p>大神培训等着你！日入百刀（利润）毕业!</p>
         <a class="btn btn-success btn-block" href="https://www.affren.com/topics/72/affiliate-marketing-he-media-buy-pei-xun">查看详情</a>
+=======
+        <p>《Affiliate Marketing 完美中文版视频教程》，30天课程挑战赚美金！</p>
+        <a class="btn btn-success btn-block" href="http://t.affren.com/">查看详情</a>
+>>>>>>> 8bfd76326b75a814451d41ec18c81b1191901a3e
       </div>
     </div>
   </div>
